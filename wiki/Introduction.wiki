@@ -41,5 +41,14 @@ catch(Exception e)
 || 3 || 弱立体感半透明边框 || `FrameBorderStyle.translucencySmallShadow` ||  || http://beautyeye.googlecode.com/svn/trunk/screenshots/x1.png ||
 || 4 || 普通不透明边框 || `FrameBorderStyle.generalNoTranslucencyShadow` || java1.5版本时 || http://beautyeye.googlecode.com/svn/trunk/screenshots/x2.png ||
 
-=== 附录3：API文档 ===
+=== 附录3：如何使用不同颜色的按钮？ ===
+
+TODO
+
+=== 附录4：如何隐藏“设置”按钮？ ===
+
+TODO 该按钮目前仅作为演示窗口标题按钮的知定义能力之用，未来将设法开和自定义功能，目前你可隐藏之。。。。。。。
+
+=== 附录5：API文档 ===
+！！！！！！TODO 不能正常解析问题！！！！！！
 [http://beautyeye.googlecode.com/svn/trunk/doc/api_doc/index.html Click here] [注：如浏览器里不能正常解析，请“另存为...”后本地打开即可]
