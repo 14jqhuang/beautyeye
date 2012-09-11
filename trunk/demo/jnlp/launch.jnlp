@@ -4,8 +4,6 @@
         <title>A demo for BeautyEye LNF</title>
         <vendor>Jack Jiang(jb2011@163.com).</vendor>
         <homepage href="http://beautyeye.googlecode.com"/>
-	<description>BeautyEye is a Java Swing cross-platform look and feel!</description>
-      <description kind="short">BeautyEye is a Java Swing lnf.</description>
        <offline-allowed/> 	
  	<shortcut>
       	<desktop/>
