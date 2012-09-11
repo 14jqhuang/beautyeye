@@ -34,4 +34,4 @@ catch(Exception e)
 }}}
 
 === API文档 ===
-[http://beautyeye.googlecode.com/svn/trunk/doc/api_doc/index.html Click here][注：如浏览器里不能正常解析，请“另存为...”后本地打开即可]
+[http://beautyeye.googlecode.com/svn/trunk/doc/api_doc/index.html Click here] [注：如浏览器里不能正常解析，请“另存为...”后本地打开即可]
