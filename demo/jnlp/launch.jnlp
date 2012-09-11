@@ -17,8 +17,7 @@
       <all-permissions/>
    </security>
 
-   <application-desc main-class="SwingSet2">
-   </application-desc>
+   <application-desc main-class="SwingSet2"/>
    
    <resources>
 	 <j2se version="1.5+" href="http://java.sun.com/products/autodl/j2se"/>
