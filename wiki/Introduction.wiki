@@ -38,7 +38,7 @@ catch(Exception e)
 || *序号* || *窗口边框尖型* || *代码* || *BeautyEye中默认使用哪种* || *效果图* ||
 || 1 || 系统默认边框 || `FrameBorderStyle.osLookAndFeelDecorated` ||  || TODO ||
 || 2 || 强立体感半透明边框 || `FrameBorderStyle.translucencyAppleLike` || java1.6.0_u10及更新版本时 || TODO ||
-|| 3 || 弱立体感半透明边框 || `FrameBorderStyle.translucencySmallShadow` || TODO || TODO ||
+|| 3 || 弱立体感半透明边框 || `FrameBorderStyle.translucencySmallShadow` ||  || TODO ||
 || 4 || 普通不透明边框 || `FrameBorderStyle.generalNoTranslucencyShadow` || java1.5版本时 || TODO ||
 
 === API文档 ===
