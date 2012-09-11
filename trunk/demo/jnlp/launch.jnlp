@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?> 
-<jnlp codebase="http://beautyeye.googlecode.com/svn/trunk/demo/jnlp/" name="SwingSets2 - A demo for BeautyEye L&F" href="launch.jnlp">
+<jnlp codebase="http://beautyeye.googlecode.com/svn/trunk/demo/jnlp/" name="SwingSets2 - A demo for BeautyEye LNF" href="launch.jnlp">
    <information>
         <title>A demo for BeautyEye L&F</title>
         <vendor>Jack Jiang(jb2011@163.com).</vendor>
