@@ -1,13 +1,18 @@
 #summary BeautyEye L&F简明开发者指南.
 
-= Introduction =
+= 如何开始？ =
 
-Add your content here.
+首先把beautyeye_lnf.jar文件作为lib放入你的项目并引用之.
 
 
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+= 如何使用BeautyEye L&F？ =
+{{{
+try
+{
+    org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper.launchBeautyEyeLNF();
+}
+catch(Exception e)
+{
+    //TODO exception
+}
+}}}
