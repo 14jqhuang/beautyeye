@@ -1,11 +1,12 @@
 #summary BeautyEye L&F简明开发者指南.
 
-= 如何开始？ =
+=== 如何开始？ ===
 
 首先把beautyeye_lnf.jar文件作为lib放入你的项目并引用之.
 
 
-= 如何使用BeautyEye L&F？ =
+=== 如何使用BeautyEye L&F？ ===
+
 {{{
 try
 {
@@ -16,3 +17,8 @@ catch(Exception e)
     //TODO exception
 }
 }}}
+
+=== 如何定义窗口边框类型？ ===
+
+TODO
+
