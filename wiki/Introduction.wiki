@@ -1,4 +1,4 @@
-#summary BeautyEye L&F简明指南.
+#summary BeautyEye L&F简明开发者指南.
 
 = Introduction =
 
