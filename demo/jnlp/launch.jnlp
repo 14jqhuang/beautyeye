@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<jnlp codebase="http://beautyeye.googlecode.com/svn/trunk/demo/jnlp/" name="SwingSets2 - A demo for BeautyEye L&F" href="launch.jnlp">
+   <information>
+        <title>A demo for BeautyEye L&F</title>
+        <vendor>Jack Jiang(jb2011@163.com).</vendor>
+        <homepage href="http://beautyeye.googlecode.com"/>
+	<description>BeautyEye is a Java Swing cross-platform look and feel!</description>
+      <description kind="short">BeautyEye is a Java Swing l&f.</description>
+       <offline-allowed/> 	
+ 	<shortcut>
+      	<desktop/>
+      	<menu submenu="BeautyEye L&F Demo"/>
+    	</shortcut>
+   </information>
+
+   <security>
+      <all-permissions/>
+   </security>
+
+   <application-desc main-class="SwingSet2">
+   </application-desc>
+   
+   <resources>
+	 <j2se version="1.5+" href="http://java.sun.com/products/autodl/j2se"/>
+        <j2se version="1.5+"/> 
+        <jar href="="../excute_jar/SwingSets2(BeautyEyeLNFDemo).jar" download="eager"/>
+    </resources>
+</jnlp> 
