@@ -2,7 +2,7 @@
 
 === 如何开始？ ===
 
-首先把beautyeye_lnf.jar文件作为lib放入你的项目并引用之.
+首先把'beautyeye_lnf.jar'文件作为lib放入你的项目并引用之.
 
 
 === 如何使用BeautyEye L&F？ ===
@@ -21,4 +21,3 @@ catch(Exception e)
 === 如何定义窗口边框类型？ ===
 
 TODO
-
