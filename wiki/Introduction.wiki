@@ -32,3 +32,6 @@ catch(Exception e)
     //TODO exception
 }
 }}}
+
+=== API文档 ===
+[http://beautyeye.googlecode.com/svn/trunk/doc/api_doc/index.html Click here]
