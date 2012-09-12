@@ -43,12 +43,12 @@ catch(Exception e)
 
 === 附录3：如何使用不同颜色的按钮？ ===
 
-|| *序号* ||*代码* || *BeautyEye中默认使用哪种* || *效果图* ||
-|| 1 ||  `FrameBorderStyle.osLookAndFeelDecorated` ||  || http://beautyeye.googlecode.com/svn/trunk/screenshots/btn2.png ||
-|| 2 ||  `FrameBorderStyle.translucencyAppleLike` || YES || http://beautyeye.googlecode.com/svn/trunk/screenshots/btn1.png ||
-|| 3 ||  `FrameBorderStyle.translucencySmallShadow` ||  || http://beautyeye.googlecode.com/svn/trunk/screenshots/btn3.png ||
-|| 4 ||  `FrameBorderStyle.generalNoTranslucencyShadow` || java1.5版本时 || http://beautyeye.googlecode.com/svn/trunk/screenshots/btn4.png ||
-|| 5 ||  `FrameBorderStyle.generalNoTranslucencyShadow` || java1.5版本时 || http://beautyeye.googlecode.com/svn/trunk/screenshots/btn5.png ||
+|| *序号* ||*代码* || *BeautyEye中默认* || *效果图* ||
+|| 1 ||  `btnInstance.setUI(new BEButtonUI().setNormalColor(BEButtonUI.NormalColor.normal));` ||  || http://beautyeye.googlecode.com/svn/trunk/screenshots/btn2.png ||
+|| 2 ||  `btnInstance.setUI(new BEButtonUI().setNormalColor(BEButtonUI.NormalColor.green));` || YES || http://beautyeye.googlecode.com/svn/trunk/screenshots/btn1.png ||
+|| 3 ||  `btnInstance.setUI(new BEButtonUI().setNormalColor(BEButtonUI.NormalColor.lightBlue));` ||  || http://beautyeye.googlecode.com/svn/trunk/screenshots/btn3.png ||
+|| 4 ||  `btnInstance.setUI(new BEButtonUI().setNormalColor(BEButtonUI.NormalColor.blue));` || java1.5版本时 || http://beautyeye.googlecode.com/svn/trunk/screenshots/btn4.png ||
+|| 5 ||  `btnInstance.setUI(new BEButtonUI().setNormalColor(BEButtonUI.NormalColor.red));` || java1.5版本时 || http://beautyeye.googlecode.com/svn/trunk/screenshots/btn5.png ||
 
 === 附录4：如何隐藏“设置”按钮？ ===
 
