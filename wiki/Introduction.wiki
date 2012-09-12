@@ -53,6 +53,7 @@ catch(Exception e)
 === 附录4：如何隐藏“设置”按钮？ ===
 
 http://beautyeye.googlecode.com/svn/trunk/screenshots/y1.png
+
 *说明：* 该按钮目前仅作为演示窗口标题按钮的自定义能力之用，未来将开放自定义功能，目前你可选择隐藏之。
 {{{
     UIManager.put("RootPane.setupButtonVisible", false);
