@@ -60,5 +60,5 @@ http://beautyeye.googlecode.com/svn/trunk/screenshots/y1.png
 }}}
 
 === 附录5：API文档 ===
-！！！！！！TODO 不能正常解析问题！！！！！！
-[http://beautyeye.googlecode.com/svn/trunk/doc/api_doc/index.html Click here] [注：如浏览器里不能正常解析，请“另存为...”后本地打开即可]
+
+[http://beautyeye.googlecode.com/svn/trunk/doc/api_doc/index.html 在线阅读] or  [http://a.x 下载all_in_one包]
