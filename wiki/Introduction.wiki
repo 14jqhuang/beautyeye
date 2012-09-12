@@ -62,4 +62,4 @@ http://beautyeye.googlecode.com/svn/trunk/screenshots/y1.png
 
 === 附录5：API文档 ===
 
-[http://beautyeye.googlecode.com/svn/trunk/doc/api_doc/index.html 在线阅读] or  [http://a.x 下载all_in_one包]
+[http://beautyeye.googlecode.com/svn/trunk/doc/api_doc/index.html 在线阅读] or  [http://code.google.com/p/beautyeye/downloads/list 下载all_in_one包]
