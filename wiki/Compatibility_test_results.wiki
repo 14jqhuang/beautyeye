@@ -1,0 +1,21 @@
+#summary BeautyEye L&F兼容性测试结果.
+
+= 说明 =
+
+以下结果受限于创始者的测试条件，并不全面，希望能得到开发者的不断反馈从而完善它.
+
+
+= 测试结果 =
+
+|| *序号* || *java版本* || *操作系统* || *运行情况* ||
+|| 1 || jdk-1_5_0_19-windows-i586-p || windows xp || OK ||
+|| 2 || jre-1_5_0_20-windows-i586-p || windows xp || OK ||
+|| 3 || jdk-6-windows-i586 || windows xp || OK ||
+|| 4 || jre-6u18-windows-i586 || windows xp/2003 || OK ||
+|| 5 || jre-6u20-windows-i586 || windows xp/2003 || OK ||
+|| 6 || jre-6u21-windows-i586 || windows xp/2003 || OK ||
+|| 7 || jdk-6u34-windows-i586 || windows xp || OK ||
+|| 7 || jdk-6u31-linux-x64 || Redhat EL 5.4  || - ||
+|| 8 || jdk-7u6-windows-i586 || windows xp || OK ||
+
+* 注：以上测试环境和JRE版本是目前创始者力所能及的所有了，希望得到开发者的反馈，谢谢。
