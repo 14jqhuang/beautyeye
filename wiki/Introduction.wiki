@@ -1,12 +1,12 @@
 #summary BeautyEye L&F简明开发者指南.
 
-=== 如何开始？ ===
+=== 第一步：如何开始？ ===
 
 首先把 *`beautyeye_lnf.jar`* 文件作为lib放入你的项目并引用之.<br>
 目前，*`beautyeye_lnf.jar`* 文件位于all_in_one包中的位置是：`all_in_one/dist/`
 
 
-=== 如何使用BeautyEye L&F？ ===
+=== 第二步：如何使用BeautyEye L&F？ ===
 
 {{{
 try
