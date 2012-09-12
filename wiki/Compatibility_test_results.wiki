@@ -1,4 +1,4 @@
-#summary BeautyEye L&F兼容性测试结果.
+#summary BeautyEye L&F兼容性测试结果(仅供参考).
 
 = 说明 =
 
