@@ -35,7 +35,7 @@ catch(Exception e)
 
 === 附录2：有几种窗口边框类型？ ===
 
-|| *序号* || *窗口边框尖型* || *代码* || *BeautyEye中默认使用哪种* || *效果图* ||
+|| *序号* || *窗口边框尖型* || *代码* || *BeautyEye中默认* || *效果图* ||
 || 1 || 系统默认边框 || `FrameBorderStyle.osLookAndFeelDecorated` ||  || http://beautyeye.googlecode.com/svn/trunk/screenshots/x3.png ||
 || 2 || 强立体感半透明边框 || `FrameBorderStyle.translucencyAppleLike` || java1.6.0_u10及更新版本时 || http://beautyeye.googlecode.com/svn/trunk/screenshots/x4.png ||
 || 3 || 弱立体感半透明边框 || `FrameBorderStyle.translucencySmallShadow` ||  || http://beautyeye.googlecode.com/svn/trunk/screenshots/x1.png ||
