@@ -9,14 +9,14 @@
 
 || *序号* || *java版本* || *操作系统* || *运行情况* ||
 || 1 || jdk-1_5_0_19-windows-i586-p || windows xp || OK ||
-|| 2 || jre-1_5_0_20-windows-i586-p || windows xp || OK ||
-|| 3 || jdk-6-windows-i586 || windows xp || OK ||
+|| 2 || jre-1_5_0_20-windows-i586-p || windows xp/windows 7 || OK ||
+|| 3 || jdk-6-windows-i586 || windows xp/windows 7 || OK ||
 || 4 || jre-6u18-windows-i586 || windows xp/2003 || OK ||
 || 5 || jre-6u20-windows-i586 || windows xp/2003 || OK ||
-|| 6 || jre-6u21-windows-i586 || windows xp/2003 || OK ||
+|| 6 || jre-6u21-windows-i586 || windows xp/2003/windows 7 || OK ||
 || 7 || jdk-6u34-windows-i586 || windows xp || OK ||
 || 8 || jdk-6u31-linux-x64 || Redhat EL 5.4  || - ||
 || 8 || jre-6u31-windows-i586 || windows 7 || OK ||
-|| 9 || jdk-7u6-windows-i586 || windows xp || OK ||
+|| 9 || jdk-7u6-windows-i586 || windows xp/windows 7 || OK ||
 
 * 注：以上测试环境和JRE版本是目前创始者力所能及的所有了，希望得到开发者的反馈，谢谢。
