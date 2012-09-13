@@ -53,7 +53,7 @@ catch(Exception e)
 
 === 附录4：如何隐藏“设置”按钮？ ===
 
-http://beautyeye.googlecode.com/svn/trunk/screenshots/y1.png
+http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/y1.png
 
 *说明：* 该按钮目前仅作为演示窗口标题按钮的自定义能力之用，未来将开放自定义功能，目前你可选择隐藏之。
 {{{
@@ -62,4 +62,4 @@ http://beautyeye.googlecode.com/svn/trunk/screenshots/y1.png
 
 === 附录5：API文档 ===
 
-[http://beautyeye.googlecode.com/svn/trunk/doc/api_doc/index.html 在线阅读] or  [http://code.google.com/p/beautyeye/downloads/list 下载all_in_one包]
+[http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/doc/api_doc/index.html 在线阅读] or  [http://code.google.com/p/beautyeye/downloads/list 下载all_in_one包]
