@@ -16,6 +16,7 @@
 || 6 || jre-6u21-windows-i586 || windows xp/2003 || OK ||
 || 7 || jdk-6u34-windows-i586 || windows xp || OK ||
 || 8 || jdk-6u31-linux-x64 || Redhat EL 5.4  || - ||
+|| 8 || jre-6u31-windows-i586 || windows 7 || OK ||
 || 9 || jdk-7u6-windows-i586 || windows xp || OK ||
 
 * 注：以上测试环境和JRE版本是目前创始者力所能及的所有了，希望得到开发者的反馈，谢谢。
