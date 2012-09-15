@@ -1,0 +1,10 @@
+#关于java1.6.0_10版本上的BUG：6750920的说明.
+
+== 该版本在使用窗口透明胆API时会出现BUG ==
+
+BUG ID：[http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6750920 6750920].
+
+
+== BUG：6750920何时被SUN官方修复？ ==
+
+该BUG已经在java1.6.0_12版本里被修复了，参见[http://www.oracle.com/technetwork/java/javase/6u12-137788.html realease note].
