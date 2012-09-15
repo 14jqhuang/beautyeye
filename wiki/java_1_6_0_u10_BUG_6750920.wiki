@@ -1,10 +1,10 @@
-#关于java1.6.0_10版本上的BUG：6750920的说明.
+#关于`java1.6.0_10`版本上的`BUG：6750920`的说明.
 
 == 该版本在使用窗口透明API时会出现BUG ==
 
-BUG ID：[http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6750920 6750920].
+`BUG ID`：[http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6750920 6750920].
 
-因此BUG而导致的异常是：
+<b>此BUG将使`BueatyEye L&F`运行时产生异常而中断运行</b>：
 {{{
 Exception in thread "AWT-EventQueue-0" java.lang.IllegalArgumentException: Width (0) and height (0) cannot be <= 0
 	at java.awt.image.DirectColorModel.createCompatibleWritableRaster(DirectColorModel.java:999)
@@ -36,6 +36,6 @@ Exception in thread "AWT-EventQueue-0" java.lang.IllegalArgumentException: Width
 	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
 }}}
 
-== BUG：6750920何时被SUN官方修复？ ==
+== `BUG 6750920` 何时被SUN官方修复？ ==
 
-该BUG已经在java1.6.0_12版本里被修复了，参见[http://www.oracle.com/technetwork/java/javase/6u12-137788.html realease note].
+该`BUG`已经在`java1.6.0_12`版本里被修复了，参见[http://www.oracle.com/technetwork/java/javase/6u12-137788.html realease note].
