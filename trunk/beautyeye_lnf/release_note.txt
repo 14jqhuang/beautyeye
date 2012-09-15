@@ -1,0 +1,18 @@
+
+-------------------------------------------------------------------------------------- v3.1发布于2012-09-15 17:00
+BeautyEye L&F v3.1版更新说明：
+
+【解决的Bug】
+1、[兼容性问题]java1.6早期版本中，DefaultTableCellHeaderRenderer中不存在getColumnSortOrder(..)方法的问题
+2、[兼容性问题]windows7下JScrollPane的滚动条NinePatch填充错位1个像素的问题
+3、使用跨平台主类BeautyEyeLookAndFeelCross时错误地把FileChooserUI也设置成了BEFileChooserWin 
+4、[兼容性问题]在windows7+jdk1.6_u31下，菜单背景、CheckBoxMenuItem等错误地使用了默认的系统方案
+5、[兼容性问题]SwingSets2Demo在java1.6.0_u10上运行出异常
+6、win7下，2级父菜单项会比子菜单项错误的高几个像素 
+7、在windows7下，topLevelMenu不能正常被绘制
+8、java1.6.0_14版前因java Bug 6683775而导致的下拉框弹出列表ui刷新混乱
+
+【其它优化内容】
+1、XBEMenuItemUI为了跨平台，将父类改为继承BasicMenuItemUI，并改名BEMenuItemUI
+2、XBEMenuUI为了跨平台，将父类改为继承BasicMenuUI，并改名BEMenuUI
+3、XBEMenuBarUI为了跨平台，将父类改为继承BasicMenuBarUI，并改名BEMenuBarUI
