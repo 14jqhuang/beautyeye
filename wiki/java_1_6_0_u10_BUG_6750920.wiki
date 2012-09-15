@@ -1,9 +1,38 @@
 #关于java1.6.0_10版本上的BUG：6750920的说明.
 
-== 该版本在使用窗口透明胆API时会出现BUG ==
+== 该版本在使用窗口透明API时会出现BUG ==
 
 BUG ID：[http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6750920 6750920].
 
+因此BUG而导致的异常是：
+Exception in thread "AWT-EventQueue-0" java.lang.IllegalArgumentException: Width (0) and height (0) cannot be <= 0
+	at java.awt.image.DirectColorModel.createCompatibleWritableRaster(DirectColorModel.java:999)
+	at sun.awt.image.SunVolatileImage.getBackupImage(SunVolatileImage.java:225)
+	at sun.awt.image.VolatileSurfaceManager.getBackupSurface(VolatileSurfaceManager.java:252)
+	at sun.awt.image.VolatileSurfaceManager.initialize(VolatileSurfaceManager.java:108)
+	at sun.awt.image.SunVolatileImage.<init>(SunVolatileImage.java:72)
+	at sun.awt.image.SunVolatileImage.<init>(SunVolatileImage.java:101)
+	at java.awt.GraphicsConfiguration.createCompatibleVolatileImage(GraphicsConfiguration.java:284)
+	at java.awt.GraphicsConfiguration.createCompatibleVolatileImage(GraphicsConfiguration.java:218)
+	at sun.awt.windows.TranslucentWindowPainter$VIWindowPainter.getBackBuffer(TranslucentWindowPainter.java:279)
+	at sun.awt.windows.TranslucentWindowPainter.updateWindow(TranslucentWindowPainter.java:131)
+	at sun.awt.windows.WWindowPeer.updateWindow(WWindowPeer.java:652)
+	at sun.awt.windows.WWindowPeer.setOpaque(WWindowPeer.java:639)
+	at java.awt.Window.applyOpaque(Window.java:3299)
+	at java.awt.Window.addNotify(Window.java:652)
+	at java.awt.Frame.addNotify(Frame.java:469)
+	at java.awt.Window.pack(Window.java:686)
+	at TPTest.createAndShowGUI(TPTest.java:21)
+	at TPTest.access$000(TPTest.java:5)
+	at TPTest$1.run(TPTest.java:28)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:209)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:597)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:269)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:184)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:174)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:169)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
 
 == BUG：6750920何时被SUN官方修复？ ==
 
