@@ -38,4 +38,4 @@ Exception in thread "AWT-EventQueue-0" java.lang.IllegalArgumentException: Width
 
 = `BUG 6750920` 何时被SUN官方修复？ =
 
-该`BUG`已经在`java1.6.0_12`版本里被修复了，参见[http://www.oracle.com/technetwork/java/javase/6u12-137788.html realease note].
+该`BUG`已经在`java1.6.0_12`版本里被修复了，参见SUN官方发布说明：[http://www.oracle.com/technetwork/java/javase/6u12-137788.html realease note].
