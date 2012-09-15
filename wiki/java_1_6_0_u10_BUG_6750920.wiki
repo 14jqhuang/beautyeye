@@ -5,6 +5,7 @@
 BUG ID：[http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6750920 6750920].
 
 因此BUG而导致的异常是：
+{{{
 Exception in thread "AWT-EventQueue-0" java.lang.IllegalArgumentException: Width (0) and height (0) cannot be <= 0
 	at java.awt.image.DirectColorModel.createCompatibleWritableRaster(DirectColorModel.java:999)
 	at sun.awt.image.SunVolatileImage.getBackupImage(SunVolatileImage.java:225)
@@ -33,6 +34,7 @@ Exception in thread "AWT-EventQueue-0" java.lang.IllegalArgumentException: Width
 	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:169)
 	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:161)
 	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+}}}
 
 == BUG：6750920何时被SUN官方修复？ ==
 
