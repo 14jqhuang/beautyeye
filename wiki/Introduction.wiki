@@ -9,28 +9,36 @@
 === 第二步：如何使用BeautyEye L&F？ ===
 
 {{{
-try
+public static void main(String[] args)
 {
-    org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper.launchBeautyEyeLNF();
-}
-catch(Exception e)
-{
-    //TODO exception
+    try
+    {
+        org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper.launchBeautyEyeLNF();
+    }
+    catch(Exception e)
+    {
+        //TODO exception
+    }
+    ..................... 你的程序代码 .........................
+    ..................... 你的程序代码 .........................
 }
 }}}
 
 === 附录1：如何定义窗口边框类型？ ===
 
 {{{
-try
+public static void main(String[] args)
 {
-    //设置本属性将改变窗口边框样式定义
-    BeautyEyeLNFHelper.frameBorderStyle = BeautyEyeLNFHelper.FrameBorderStyle.osLookAndFeelDecorated;
+    try
+    {
+        //设置本属性将改变窗口边框样式定义
+        BeautyEyeLNFHelper.frameBorderStyle =     BeautyEyeLNFHelper.FrameBorderStyle.osLookAndFeelDecorated;
     org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper.launchBeautyEyeLNF();
-}
-catch(Exception e)
-{
-    //TODO exception
+    }
+    catch(Exception e)
+    {
+        //TODO exception
+    }
 }
 }}}
 
