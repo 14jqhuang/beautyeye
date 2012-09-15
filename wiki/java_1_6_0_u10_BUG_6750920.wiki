@@ -4,7 +4,7 @@
 
 `BUG ID`：[http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6750920 6750920].
 
-<b>此BUG将使`BueatyEye L&F`运行时产生异常而中断运行</b>：
+<b>此BUG将使`BueatyEye L&F`(或其它使用透明API的程序)运行时产生异常而中断运行</b>：
 {{{
 Exception in thread "AWT-EventQueue-0" java.lang.IllegalArgumentException: Width (0) and height (0) cannot be <= 0
 	at java.awt.image.DirectColorModel.createCompatibleWritableRaster(DirectColorModel.java:999)
