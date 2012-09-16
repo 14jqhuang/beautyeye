@@ -9,6 +9,7 @@
 
 === 第二步：如何使用BeautyEye L&F？ ===
 
+<font color="#2A779D">加入以下代码，即可将你的Java程序界面更换成Beauty Eye的外观：</font>
 {{{
 public static void main(String[] args)
 {
