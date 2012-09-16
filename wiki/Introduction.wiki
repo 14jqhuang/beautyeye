@@ -26,6 +26,8 @@ public static void main(String[] args)
 }
 }}}
 
+----
+
 === 附录1：如何定义窗口边框类型？ ===
 
 {{{
