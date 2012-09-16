@@ -28,7 +28,7 @@ public static void main(String[] args)
 
 <br>
 ----
-<br>
+
 === 附录1：如何定义窗口边框类型？ ===
 
 {{{
