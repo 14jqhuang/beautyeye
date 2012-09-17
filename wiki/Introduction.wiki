@@ -60,8 +60,8 @@ public static void main(String[] args)
 === 附录3：如何使用不同颜色的按钮？ ===
 
 || *序号* || *代码* || *BeautyEye中默认* || *效果图* ||
-|| 1 ||  `btnInstance.setUI(new BEButtonUI().setNormalColor(BEButtonUI.NormalColor.normal));` ||  || http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/btn2.png ||
-|| 2 ||  `btnInstance.setUI(new BEButtonUI().setNormalColor(BEButtonUI.NormalColor.green));` || YES || http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/btn1.png ||
+|| 1 ||  `btnInstance.setUI(new BEButtonUI().setNormalColor(BEButtonUI.NormalColor.normal));` || YES || http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/btn2.png ||
+|| 2 ||  `btnInstance.setUI(new BEButtonUI().setNormalColor(BEButtonUI.NormalColor.green));` ||  || http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/btn1.png ||
 || 3 ||  `btnInstance.setUI(new BEButtonUI().setNormalColor(BEButtonUI.NormalColor.lightBlue));` ||  || http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/btn3.png ||
 || 4 ||  `btnInstance.setUI(new BEButtonUI().setNormalColor(BEButtonUI.NormalColor.blue));` ||  || http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/btn4.png ||
 || 5 ||  `btnInstance.setUI(new BEButtonUI().setNormalColor(BEButtonUI.NormalColor.red));` ||  || http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/btn5.png ||
