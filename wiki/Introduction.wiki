@@ -93,3 +93,6 @@ http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/y1.png
 
 === 附录7：为何java1.6.0_10或update 11版不能启用BeautyEye L&F的窗口透明？===
 因为该版本存在一个Bug，具体[https://code.google.com/p/beautyeye/wiki/java_1_6_0_u10_BUG_6750920 请看这里].
+
+=== 附录8：关于win7平台上某些java版本上的文本字体发虚的问题说明 ===
+具体请参见issue 26
