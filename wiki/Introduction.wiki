@@ -96,3 +96,7 @@ http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/y1.png
 
 === 附录8：关于win7平台下某些java版本上的文本字体发虚的问题说明 ===
 该问题具体请参见 issue 25
+
+=== 附录9：关于使用了BeautyEye后窗口的contentPane变成全透明的说明 ===
+
+首先申明这不是BeautyEye的bug，这其实是官方窗口透明API的实现，JFrame（包括JDialog）的contentPane实质就是JPanel，它被认为是窗口的一部分，官方窗口透明API在透明窗口其它部件的同时也把它透明了（我没看过源码，目前还不能确切的说），但这是合理的，因为它将能实现你还没想到的全透明场景。
