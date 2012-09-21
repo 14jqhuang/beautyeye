@@ -16,3 +16,26 @@ BeautyEye L&F v3.1版更新说明：
 1、XBEMenuItemUI为了跨平台，将父类改为继承BasicMenuItemUI，并改名BEMenuItemUI
 2、XBEMenuUI为了跨平台，将父类改为继承BasicMenuUI，并改名BEMenuUI
 3、XBEMenuBarUI为了跨平台，将父类改为继承BasicMenuBarUI，并改名BEMenuBarUI
+
+
+-------------------------------------------------------------------------------------- v3.2发布于2012-09-21 17:44
+BeautyEye L&F v3.2版更新说明：
+
+【解决的Bug】
+1、因调整了默认的列表行高，受此影响FileChooser里的文件列表行高也被改变，导致文件列表不好看   影响版本v3.0v3.1
+2、滚动条在非常小的时候会虚绘（即滚动条实质没它么大却绘成了NP图最小大小）问题   影响版本v3.03.1
+3、在windows系统中最大化的时候,会遮住屏幕底部的taskbar,windowsXp 和 windows7 都是这样
+4、用户自定义的JComboBox的render因pop机制中设置透明问题而导致的下拉列表单元被景不能被正确绘制问题
+5、因WindowsFileChooserUI的代码设计不良，无法解决文件选择在板中的目录下拉框左边难看的问题
+
+
+【其它优化内容】
+1、关于FrameBorderStyle.translucencyAppleLike边框的敏感区判断优化   影响版本v3.0v3.1
+2、为调试信息加一个DEBUG开关，用户可以选择开关这些信息的输入   影响版本v3.0v3.1
+3、增加了开关量：用于开启/关闭当窗口处于非活动状态（inactivity）时的半透明视觉效果   解决于v3.2
+4、将每一个组件的UI属性独立的放入各自的__UI__类中，以便第3方可以独立调用
+5、在拖动窗口时，偶尔会无法恢复到先前的鼠标样式（仍然错误的用了拖动时的Cursor样式）   影响版本v3.0v3.1
+6、JFileChooser中的JComboxBox因使用的自定义renderer导致与be LNF很不搭
+
+
+
