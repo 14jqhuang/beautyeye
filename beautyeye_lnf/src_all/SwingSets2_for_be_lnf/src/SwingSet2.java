@@ -272,11 +272,19 @@ public class SwingSet2 extends JPanel {
 	public static void main(String[] args) throws Exception {
 		// Create SwingSet on the default monitor
 //		UIManager.put("swing.boldMetal", Boolean.FALSE);
-//		UIManager.setLookAndFeel(BeautyEyeLNFHelper.getBeautyEyeLNFCrossPlatform());//new WindowsLookAndFeel());
 		
 //		BeautyEyeLNFHelper.frameBorderStyle = 
 //			BeautyEyeLNFHelper.FrameBorderStyle.osLookAndFeelDecorated;
+////		UIManager.setLookAndFeel(BeautyEyeLNFHelper.getBeautyEyeLNFCrossPlatform());//new WindowsLookAndFeel());
+//		
+//		
+		BeautyEyeLNFHelper.debug = true;
+//		BeautyEyeLNFHelper.translucencyAtFrameInactive = false;
 		BeautyEyeLNFHelper.launchBeautyEyeLNF();
+		
+//		JFrame.setDefaultLookAndFeelDecorated(true);
+//		JDialog.setDefaultLookAndFeelDecorated(true);
+//		UIManager.setLookAndFeel(new MetalLookAndFeel());
 		
 		SwingSet2 swingset = new SwingSet2(null, GraphicsEnvironment.
 				getLocalGraphicsEnvironment().
@@ -604,6 +612,8 @@ public class SwingSet2 extends JPanel {
 	public JMenuItem createMenuItem(JMenu menu, String label, String mnemonic,
 			String accessibleDescription, Action action) {
 		JMenuItem mi = (JMenuItem) menu.add(new JMenuItem(getString(label)));
+		
+//		mi.setBorder(BorderFactory.createEmptyBorder());
 		mi.setMnemonic(getMnemonic(mnemonic));
 		mi.getAccessibleContext().setAccessibleDescription(getString(accessibleDescription));
 		mi.addActionListener(action);
@@ -919,6 +929,9 @@ public class SwingSet2 extends JPanel {
 			};
 			frame.addWindowListener(l);
 		}
+		
+		//由Jack Jiang于2012-09-22加上，防止因JToolBar的大小而影响JFrame的prefereSize使得没法再缩小
+		frame.setMinimumSize(new Dimension(100,100));
 		return frame;
 	}
 
