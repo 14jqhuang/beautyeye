@@ -44,6 +44,7 @@
 
 import java.util.HashMap;
 
+// TODO: Auto-generated Javadoc
 /**
  * A class that syntax highlights Java code by turning it into html.
  *
@@ -77,65 +78,156 @@ import java.util.HashMap;
  */
 public class CodeViewer {
 
+    /** The reserved words. */
     private static HashMap reservedWords = new HashMap(); // >= Java2 only (also, not thread-safe)
     //private static Hashtable reservedWords = new Hashtable(); // < Java2 (thread-safe)
+    /** The in multi line comment. */
     private boolean inMultiLineComment = false;
+    
+    /** The background color. */
     private String backgroundColor = "#ffffff";
+    
+    /** The comment start. */
     private String commentStart = "</font><font size=2 color=\"#0000aa\"><i>";
+    
+    /** The comment end. */
     private String commentEnd = "</font></i><font size=2 color=black>";    
+    
+    /** The string start. */
     private String stringStart = "</font><font size=2 color=\"#00bb00\">";
+    
+    /** The string end. */
     private String stringEnd = "</font><font size=2 color=black>";
+    
+    /** The reserved word start. */
     private String reservedWordStart = "<b>";
+    
+    /** The reserved word end. */
     private String reservedWordEnd = "</b>";
 
     static {
         loadHash();
     }
 
+    /**
+     * Instantiates a new code viewer.
+     */
     public CodeViewer() {
     }
 
+    /**
+     * Sets the comment start.
+     *
+     * @param commentStart the new comment start
+     */
     public void setCommentStart(String commentStart) {
         this.commentStart = commentStart;
     }
+    
+    /**
+     * Sets the comment end.
+     *
+     * @param commentEnd the new comment end
+     */
     public void setCommentEnd(String commentEnd) {
         this.commentEnd = commentEnd;
     }
+    
+    /**
+     * Sets the string start.
+     *
+     * @param stringStart the new string start
+     */
     public void setStringStart(String stringStart) {
         this.stringStart = stringStart;
     }
+    
+    /**
+     * Sets the string end.
+     *
+     * @param stringEnd the new string end
+     */
     public void setStringEnd(String stringEnd) {
         this.stringEnd = stringEnd;
     }
+    
+    /**
+     * Sets the reserved word start.
+     *
+     * @param reservedWordStart the new reserved word start
+     */
     public void setReservedWordStart(String reservedWordStart) {
         this.reservedWordStart = reservedWordStart;
     }
+    
+    /**
+     * Sets the reserved word end.
+     *
+     * @param reservedWordEnd the new reserved word end
+     */
     public void setReservedWordEnd(String reservedWordEnd) {
         this.reservedWordEnd = reservedWordEnd;
     }
 
+    /**
+     * Gets the comment start.
+     *
+     * @return the comment start
+     */
     public String getCommentStart() {
         return commentStart;
     }
+    
+    /**
+     * Gets the comment end.
+     *
+     * @return the comment end
+     */
     public String getCommentEnd() {
         return commentEnd;
     }
+    
+    /**
+     * Gets the string start.
+     *
+     * @return the string start
+     */
     public String getStringStart() {
         return stringStart;
     }
+    
+    /**
+     * Gets the string end.
+     *
+     * @return the string end
+     */
     public String getStringEnd() {
         return stringEnd;
     }
+    
+    /**
+     * Gets the reserved word start.
+     *
+     * @return the reserved word start
+     */
     public String getReservedWordStart() {
         return reservedWordStart;
     }
+    
+    /**
+     * Gets the reserved word end.
+     *
+     * @return the reserved word end
+     */
     public String getReservedWordEnd() {
         return reservedWordEnd;
     }
 
     /**
      * Passes off each line to the first filter.
-     * @param   line    The line of Java code to be highlighted.
+     *
+     * @param line the line
+     * @return the string
      */
     public String syntaxHighlight( String line ) {
        return htmlFilter(line);
@@ -144,6 +236,12 @@ public class CodeViewer {
     /*
      * Filter html tags into more benign text.
      */ 
+    /**
+     * Html filter.
+     *
+     * @param line the line
+     * @return the string
+     */
     private String htmlFilter( String line ) {
         if( line == null || line.equals("") ) {
             return "";
@@ -173,6 +271,12 @@ public class CodeViewer {
      * Filter out multiLine comments. State is kept with a private boolean
      * variable.
      */     
+    /**
+     * Multi line comment filter.
+     *
+     * @param line the line
+     * @return the string
+     */
     private String multiLineCommentFilter(String line) {
         if (line == null || line.equals("")) {
             return "";
@@ -217,6 +321,12 @@ public class CodeViewer {
     /*
      * Filter inline comments from a line and formats them properly.
      */
+    /**
+     * Inline comment filter.
+     *
+     * @param line the line
+     * @return the string
+     */
     private String inlineCommentFilter(String line) {
         if (line == null || line.equals("")) {
             return "";
@@ -237,6 +347,12 @@ public class CodeViewer {
 
     /*
      * Filters strings from a line of text and formats them properly.
+     */
+    /**
+     * String filter.
+     *
+     * @param line the line
+     * @return the string
      */
     private String stringFilter(String line) {
         if (line == null || line.equals("")) {
@@ -276,6 +392,12 @@ public class CodeViewer {
 
     /*
      * Filters keywords from a line of text and formats them properly.
+     */
+    /**
+     * Keyword filter.
+     *
+     * @param line the line
+     * @return the string
      */
     private String keywordFilter( String line ) {
         if( line == null || line.equals("") ) {
@@ -319,6 +441,14 @@ public class CodeViewer {
      * All important replace method. Replaces all occurences of oldString in
      * line with newString.
      */
+    /**
+     * Replace.
+     *
+     * @param line the line
+     * @param oldString the old string
+     * @param newString the new string
+     * @return the string
+     */
     private String replace( String line, String oldString, String newString ) {
         int i=0;
         while( ( i=line.indexOf( oldString, i ) ) >= 0 ) {
@@ -331,6 +461,13 @@ public class CodeViewer {
     /*
      * Checks to see if some position in a line is between String start and
      * ending characters. Not yet used in code or fully working :)
+     */
+    /**
+     * Checks if is inside string.
+     *
+     * @param line the line
+     * @param position the position
+     * @return true, if is inside string
      */
     private boolean isInsideString(String line, int position) {
         if (line.indexOf("\"") < 0) {
@@ -359,6 +496,9 @@ public class CodeViewer {
 
     /*
      * Load Hashtable (or HashMap) with Java reserved words.
+     */
+    /**
+     * Load hash.
      */
     private static void loadHash() {
         reservedWords.put( "abstract", "abstract" );

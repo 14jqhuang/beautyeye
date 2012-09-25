@@ -73,31 +73,45 @@ import javax.swing.border.BevelBorder;
 import org.jb2011.lnf.beautyeye.ch3_button.BEButtonUI;
 import org.jb2011.lnf.beautyeye.widget.N9ComponentFactory;
 
+// TODO: Auto-generated Javadoc
 /**
- * JFileChooserDemo
+ * JFileChooserDemo.
  *
  * @version 1.18 02/03/06
  * @author Jeff Dinkins
  */
 public class FileChooserDemo extends DemoModule {
+    
+    /** The image. */
     JLabel theImage;
+    
+    /** The jpg icon. */
     Icon jpgIcon; 
+    
+    /** The gif icon. */
     Icon gifIcon;
 
     /**
      * main method allows us to run as a standalone demo.
+     *
+     * @param args the arguments
      */
     public static void main(String[] args) {
 	FileChooserDemo demo = new FileChooserDemo(null);
 	demo.mainImpl();
     }
     
+    /* (non-Javadoc)
+     * @see DemoModule#getName()
+     */
     @Override public String getName() {
     	return "文件窗";
     };
 
     /**
-     * FileChooserDemo Constructor
+     * FileChooserDemo Constructor.
+     *
+     * @param swingset the swingset
      */
     public FileChooserDemo(SwingSet2 swingset) {
 	// Set the title for this demo, and an icon used to represent this
@@ -107,6 +121,9 @@ public class FileChooserDemo extends DemoModule {
 	createFileChooserDemo();
     }
 
+    /**
+     * Creates the file chooser demo.
+     */
     public void createFileChooserDemo() {
 	theImage = new JLabel("");
 	jpgIcon = createImageIcon("filechooser/jpgIcon.jpg", "jpg image");
@@ -165,6 +182,11 @@ public class FileChooserDemo extends DemoModule {
 	innerPanel.add(Box.createRigidArea(HGAP20));
     }
 
+    /**
+     * Creates the file chooser.
+     *
+     * @return the j file chooser
+     */
     public JFileChooser createFileChooser() {
 	// create a filechooser
 	JFileChooser fc = new JFileChooser();
@@ -183,6 +205,11 @@ public class FileChooserDemo extends DemoModule {
     }
 
 
+    /**
+     * Creates the plain file chooser button.
+     *
+     * @return the j button
+     */
     public JButton createPlainFileChooserButton() {
 	Action a = new AbstractAction(getString("FileChooserDemo.plainbutton")) {
 	    public void actionPerformed(ActionEvent e) {
@@ -200,6 +227,11 @@ public class FileChooserDemo extends DemoModule {
 	return createButton(a);
     }
 
+    /**
+     * Creates the preview file chooser button.
+     *
+     * @return the j button
+     */
     public JButton createPreviewFileChooserButton() {
 	Action a = new AbstractAction(getString("FileChooserDemo.previewbutton")) {
 	    public void actionPerformed(ActionEvent e) {
@@ -231,9 +263,19 @@ public class FileChooserDemo extends DemoModule {
 	return createButton(a);
     }
 
+    /** The dialog. */
     JDialog dialog;
+    
+    /** The fc. */
     JFileChooser fc;
 
+    /**
+     * Creates the file filter.
+     *
+     * @param description the description
+     * @param extensions the extensions
+     * @return the javax.swing.filechooser. file filter
+     */
     private javax.swing.filechooser.FileFilter createFileFilter(
             String description, String...extensions) {
         description = createFileNameFilterDescriptionFromExtensions(
@@ -242,6 +284,13 @@ public class FileChooserDemo extends DemoModule {
         return null;//* 由jb2011 20120829修改：为了能兼容在jdk1.5上动行，1.6里才有的FileNameExtensionFilter没法用，这里就去掉吧，反正本程序也仅用于演示
     }
 
+    /**
+     * Creates the file name filter description from extensions.
+     *
+     * @param description the description
+     * @param extensions the extensions
+     * @return the string
+     */
     private String createFileNameFilterDescriptionFromExtensions(
             String description, String[] extensions) {
         String fullDescription = (description == null) ?
@@ -256,6 +305,11 @@ public class FileChooserDemo extends DemoModule {
         return fullDescription;
     }
 
+    /**
+     * Creates the custom file chooser button.
+     *
+     * @return the j button
+     */
     public JButton createCustomFileChooserButton() {
 	Action a = new AbstractAction(getString("FileChooserDemo.custombutton")) {
 	    public void actionPerformed(ActionEvent e) {
@@ -321,6 +375,11 @@ public class FileChooserDemo extends DemoModule {
 	return createButton(a);
     }
 
+    /**
+     * Creates the about action.
+     *
+     * @return the action
+     */
     public Action createAboutAction() {
 	return new AbstractAction(getString("FileChooserDemo.about")) {
 	    public void actionPerformed(ActionEvent e) {
@@ -338,6 +397,11 @@ public class FileChooserDemo extends DemoModule {
 	};
     }
 
+    /**
+     * Creates the ok action.
+     *
+     * @return the action
+     */
     public Action createOKAction() {
 	return new AbstractAction(getString("FileChooserDemo.ok")) {
 	    public void actionPerformed(ActionEvent e) {
@@ -351,6 +415,11 @@ public class FileChooserDemo extends DemoModule {
 	};
     }
 
+    /**
+     * Creates the cancel action.
+     *
+     * @return the action
+     */
     public Action createCancelAction() {
 	return new AbstractAction(getString("FileChooserDemo.cancel")) {
 	    public void actionPerformed(ActionEvent e) {
@@ -359,6 +428,11 @@ public class FileChooserDemo extends DemoModule {
 	};
     }
 
+    /**
+     * Creates the find action.
+     *
+     * @return the action
+     */
     public Action createFindAction() {
 	Icon icon = createImageIcon("filechooser/find.gif", getString("FileChooserDemo.find"));
 	return new AbstractAction("", icon) {
@@ -371,6 +445,11 @@ public class FileChooserDemo extends DemoModule {
 	};
     }
 
+    /**
+     * Creates the help action.
+     *
+     * @return the action
+     */
     public Action createHelpAction() {
 	Icon icon = createImageIcon("filechooser/help.gif", getString("FileChooserDemo.help"));
 	return new AbstractAction("", icon) {
@@ -380,10 +459,23 @@ public class FileChooserDemo extends DemoModule {
 	};
     }
     
+    /**
+     * The Class MyImageIcon.
+     */
     class MyImageIcon extends ImageIcon {
+	
+	/**
+	 * Instantiates a new my image icon.
+	 *
+	 * @param filename the filename
+	 */
 	public MyImageIcon(String filename) {
 	    super(filename);
 	};
+	
+	/* (non-Javadoc)
+	 * @see javax.swing.ImageIcon#paintIcon(java.awt.Component, java.awt.Graphics, int, int)
+	 */
 	public synchronized void paintIcon(Component c, Graphics g, int x, int y) {
 	    g.setColor(Color.white);
 	    g.fillRect(0,0, c.getWidth(), c.getHeight());
@@ -405,10 +497,21 @@ public class FileChooserDemo extends DemoModule {
 	}
     }
 
+    /**
+     * Load image.
+     *
+     * @param filename the filename
+     */
     public void loadImage(String filename) {
 	theImage.setIcon(new MyImageIcon(filename));
     }
 
+    /**
+     * Creates the button.
+     *
+     * @param a the a
+     * @return the j button
+     */
     public JButton createButton(Action a) {
 	JButton b = new JButton(a) {
 	    public Dimension getMaximumSize() {
@@ -420,6 +523,12 @@ public class FileChooserDemo extends DemoModule {
 	return b;
     }
 
+    /**
+     * Creates the image button.
+     *
+     * @param a the a
+     * @return the j button
+     */
     public JButton createImageButton(Action a) {
 	JButton b = new JButton(a);
 	b.setMargin(new Insets(0,0,0,0));

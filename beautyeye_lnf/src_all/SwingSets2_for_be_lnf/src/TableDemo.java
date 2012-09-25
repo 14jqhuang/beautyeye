@@ -89,64 +89,109 @@ import javax.swing.table.TableModel;
 
 import org.jb2011.lnf.beautyeye.utils.JVM;
 
+// TODO: Auto-generated Javadoc
 /**
- * Table demo
+ * Table demo.
  *
  * @version 1.23 11/30/05
  * @author Philip Milne
  * @author Steve Wilson
  */
 public class TableDemo extends DemoModule {
+    
+    /** The table view. */
     JTable      tableView;
+    
+    /** The scrollpane. */
     JScrollPane scrollpane;
+    
+    /** The origin. */
     Dimension   origin = new Dimension(0, 0);
     
+    /** The is column reordering allowed check box. */
     JCheckBox   isColumnReorderingAllowedCheckBox;
+    
+    /** The show horizontal lines check box. */
     JCheckBox   showHorizontalLinesCheckBox;
+    
+    /** The show vertical lines check box. */
     JCheckBox   showVerticalLinesCheckBox;
 
+    /** The is column selection allowed check box. */
     JCheckBox   isColumnSelectionAllowedCheckBox;
+    
+    /** The is row selection allowed check box. */
     JCheckBox   isRowSelectionAllowedCheckBox;
 
+    /** The inter cell spacing label. */
     JLabel      interCellSpacingLabel;
+    
+    /** The row height label. */
     JLabel      rowHeightLabel;
 
+    /** The inter cell spacing slider. */
     JSlider     interCellSpacingSlider;
+    
+    /** The row height slider. */
     JSlider     rowHeightSlider;
 
+    /** The selection mode combo box. */
     JComboBox	selectionModeComboBox = null;
+    
+    /** The resize mode combo box. */
     JComboBox	resizeModeComboBox = null;
 
+    /** The header label. */
     JLabel      headerLabel;
+    
+    /** The footer label. */
     JLabel      footerLabel;
 
+    /** The header text field. */
     JTextField  headerTextField;
+    
+    /** The footer text field. */
     JTextField  footerTextField;
 
+    /** The fit width. */
     JCheckBox   fitWidth;
+    
+    /** The print button. */
     JButton     printButton;
 
+    /** The control panel. */
     JPanel      controlPanel;
+    
+    /** The table aggregate. */
     JScrollPane tableAggregate;
 
+    /** The path. */
     String path = "ImageClub/food/";
 
+    /** The INITIA l_ rowheight. */
     final int INITIAL_ROWHEIGHT = 25;// 原代码是33，由jb2011改为25，好看些
 
     /**
      * main method allows us to run as a standalone demo.
+     *
+     * @param args the arguments
      */
     public static void main(String[] args) {
 	TableDemo demo = new TableDemo(null);
 	demo.mainImpl();
     }
     
+    /* (non-Javadoc)
+     * @see DemoModule#getName()
+     */
     @Override public String getName() {
     	return "表格";
     };
 
     /**
-     * TableDemo Constructor
+     * TableDemo Constructor.
+     *
+     * @param swingset the swingset
      */
     public TableDemo(SwingSet2 swingset) {
 	super(swingset, "TableDemo"
@@ -463,10 +508,13 @@ public class TableDemo extends DemoModule {
     } // setTableControllers()
 
     /**
-     * Sets up accessibility relationships to denote that one 
+     * Sets up accessibility relationships to denote that one
      * object controls another. The CONTROLLER_FOR property is
      * set on the controller object, and the CONTROLLED_BY
      * property is set on the target object.
+     *
+     * @param controller the controller
+     * @param target the target
      */
     private void setAccessibleController(JComponent controller,
 					JComponent target) {
@@ -483,6 +531,11 @@ public class TableDemo extends DemoModule {
 		AccessibleRelation.CONTROLLED_BY, controller));
     } // setAccessibleController()
 
+    /**
+     * Creates the table.
+     *
+     * @return the j scroll pane
+     */
     public JScrollPane createTable() {
 
         // final
@@ -684,6 +737,9 @@ public class TableDemo extends DemoModule {
         return scrollpane;
     }
 
+    /**
+     * Prints the table.
+     */
     private void printTable() {
         MessageFormat headerFmt;
         MessageFormat footerFmt;
@@ -737,13 +793,30 @@ public class TableDemo extends DemoModule {
         }
     }
 
+    /**
+     * The Class NamedColor.
+     */
     class NamedColor extends Color {
+	
+	/** The name. */
 	String name;
+	
+	/**
+	 * Instantiates a new named color.
+	 *
+	 * @param color the color
+	 * @param name the name
+	 */
 	public NamedColor(Color color, String name) {
 	    super(color.getRGB());
 	    this.name = name;
 	}
 	
+	/**
+	 * Gets the text color.
+	 *
+	 * @return the text color
+	 */
 	public Color getTextColor() {
 	    int r = getRed();
 	    int g = getGreen();
@@ -755,18 +828,36 @@ public class TableDemo extends DemoModule {
 	    }
 	}
 	
+	/* (non-Javadoc)
+	 * @see java.awt.Color#toString()
+	 */
 	public String toString() {
 	    return name;
 	}
     }
         
+    /**
+     * The Class ColumnLayout.
+     */
     class ColumnLayout implements LayoutManager {
+	
+	/** The x inset. */
 	int xInset = 5;
+	
+	/** The y inset. */
 	int yInset = 5;
+	
+	/** The y gap. */
 	int yGap = 2;
 	
+	/* (non-Javadoc)
+	 * @see java.awt.LayoutManager#addLayoutComponent(java.lang.String, java.awt.Component)
+	 */
 	public void addLayoutComponent(String s, Component c) {}
 	
+	/* (non-Javadoc)
+	 * @see java.awt.LayoutManager#layoutContainer(java.awt.Container)
+	 */
 	public void layoutContainer(Container c) {
 	    Insets insets = c.getInsets();
 	    int height = yInset + insets.top;
@@ -782,6 +873,9 @@ public class TableDemo extends DemoModule {
 	    
 	}
 	
+	/* (non-Javadoc)
+	 * @see java.awt.LayoutManager#minimumLayoutSize(java.awt.Container)
+	 */
 	public Dimension minimumLayoutSize(Container c) {
 	    Insets insets = c.getInsets();
 	    int height = yInset + insets.top;
@@ -798,13 +892,22 @@ public class TableDemo extends DemoModule {
 	    return new Dimension( width, height);
 	}
 	
+	/* (non-Javadoc)
+	 * @see java.awt.LayoutManager#preferredLayoutSize(java.awt.Container)
+	 */
 	public Dimension preferredLayoutSize(Container c) {
 	    return minimumLayoutSize(c);
 	}
 	
+	/* (non-Javadoc)
+	 * @see java.awt.LayoutManager#removeLayoutComponent(java.awt.Component)
+	 */
 	public void removeLayoutComponent(Component c) {}
     }
     
+    /* (non-Javadoc)
+     * @see DemoModule#updateDragEnabled(boolean)
+     */
     void updateDragEnabled(boolean dragEnabled) {
         tableView.setDragEnabled(dragEnabled);
         headerTextField.setDragEnabled(dragEnabled);

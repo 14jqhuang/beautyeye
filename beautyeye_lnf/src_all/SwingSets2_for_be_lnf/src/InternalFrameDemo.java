@@ -62,61 +62,106 @@ import javax.swing.JTextField;
 
 import org.jb2011.lnf.beautyeye.ch3_button.BEButtonUI;
 
+// TODO: Auto-generated Javadoc
 /**
- * Internal Frames Demo
+ * Internal Frames Demo.
  *
  * @version 1.16 11/17/05
  * @author Jeff Dinkins
  */
 public class InternalFrameDemo extends DemoModule {
+    
+    /** The window count. */
     int windowCount = 0;
+    
+    /** The desktop. */
     JDesktopPane desktop = null;
 
+    /** The icon4. */
     ImageIcon icon1, icon2, icon3, icon4;
+    
+    /** The sm icon4. */
     ImageIcon smIcon1, smIcon2, smIcon3, smIcon4;
 
+    /** The FIRS t_ fram e_ layer. */
     public Integer FIRST_FRAME_LAYER  = new Integer(1);
+    
+    /** The DEM o_ fram e_ layer. */
     public Integer DEMO_FRAME_LAYER   = new Integer(2);
+    
+    /** The PALETT e_ layer. */
     public Integer PALETTE_LAYER     = new Integer(3);
 
+    /** The FRAM e0_ x. */
     public int FRAME0_X        = 15;
+    
+    /** The FRAM e0_ y. */
     public int FRAME0_Y        = 280;
 
+    /** The FRAM e0_ width. */
     public int FRAME0_WIDTH    = 320;
+    
+    /** The FRAM e0_ height. */
     public int FRAME0_HEIGHT   = 230;
 
+    /** The FRAM e_ width. */
     public int FRAME_WIDTH     = 225;
+    
+    /** The FRAM e_ height. */
     public int FRAME_HEIGHT    = 150;
 
+    /** The PALETT e_ x. */
     public int PALETTE_X      = 375;
+    
+    /** The PALETT e_ y. */
     public int PALETTE_Y      = 20;
 
+    /** The PALETT e_ width. */
     public int PALETTE_WIDTH  = 260;
+    
+    /** The PALETT e_ height. */
     public int PALETTE_HEIGHT = 260;
 
+    /** The window resizable. */
     JCheckBox windowResizable   = null;
+    
+    /** The window closable. */
     JCheckBox windowClosable    = null;
+    
+    /** The window iconifiable. */
     JCheckBox windowIconifiable = null;
+    
+    /** The window maximizable. */
     JCheckBox windowMaximizable = null;
 
+    /** The window title field. */
     JTextField windowTitleField = null;
+    
+    /** The window title label. */
     JLabel windowTitleLabel = null;
 
 
     /**
      * main method allows us to run as a standalone demo.
+     *
+     * @param args the arguments
      */
     public static void main(String[] args) {
 	InternalFrameDemo demo = new InternalFrameDemo(null);
 	demo.mainImpl();
     }
     
+    /* (non-Javadoc)
+     * @see DemoModule#getName()
+     */
     @Override public String getName() {
     	return "ÄÚ²¿´°";
     };
 
     /**
-     * InternalFrameDemo Constructor
+     * InternalFrameDemo Constructor.
+     *
+     * @param swingset the swingset
      */
     public InternalFrameDemo(SwingSet2 swingset) {
 	super(swingset, "InternalFrameDemo"
@@ -154,7 +199,13 @@ public class InternalFrameDemo extends DemoModule {
 
 
     /**
-     * Create an internal frame and add a scrollable imageicon to it
+     * Create an internal frame and add a scrollable imageicon to it.
+     *
+     * @param icon the icon
+     * @param layer the layer
+     * @param width the width
+     * @param height the height
+     * @return the j internal frame
      */
     public JInternalFrame createInternalFrame(Icon icon, Integer layer, int width, int height) {
 	JInternalFrame jif = new JInternalFrame();
@@ -190,6 +241,11 @@ public class InternalFrameDemo extends DemoModule {
 	return jif;
     }
 
+    /**
+     * Creates the internal frame palette.
+     *
+     * @return the j internal frame
+     */
     public JInternalFrame createInternalFramePalette() {
 	JInternalFrame palette = new JInternalFrame(
 	    getString("InternalFrameDemo.palette_label")
@@ -309,16 +365,32 @@ public class InternalFrameDemo extends DemoModule {
     }
 
 
+    /**
+     * The Class ShowFrameAction.
+     */
     class ShowFrameAction extends AbstractAction {
+	
+	/** The demo. */
 	InternalFrameDemo demo;
+	
+	/** The icon. */
 	Icon icon;
 	
 	
+	/**
+	 * Instantiates a new show frame action.
+	 *
+	 * @param demo the demo
+	 * @param icon the icon
+	 */
 	public ShowFrameAction(InternalFrameDemo demo, Icon icon) {
 	    this.demo = demo;
 	    this.icon = icon;
 	}
 	
+	/* (non-Javadoc)
+	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 */
 	public void actionPerformed(ActionEvent e) {
 	    demo.createInternalFrame(icon,
 				     getDemoFrameLayer(),
@@ -328,20 +400,46 @@ public class InternalFrameDemo extends DemoModule {
 	}
     }
 
+    /**
+     * Gets the frame width.
+     *
+     * @return the frame width
+     */
     public int getFrameWidth() {
 	return FRAME_WIDTH;
     }
 
+    /**
+     * Gets the frame height.
+     *
+     * @return the frame height
+     */
     public int getFrameHeight() {
 	return FRAME_HEIGHT;
     }
 
+    /**
+     * Gets the demo frame layer.
+     *
+     * @return the demo frame layer
+     */
     public Integer getDemoFrameLayer() {
 	return DEMO_FRAME_LAYER;
     }
     
+    /**
+     * The Class ImageScroller.
+     */
     class ImageScroller extends JScrollPane {
 	
+	/**
+	 * Instantiates a new image scroller.
+	 *
+	 * @param demo the demo
+	 * @param icon the icon
+	 * @param layer the layer
+	 * @param count the count
+	 */
 	public ImageScroller(InternalFrameDemo demo, Icon icon, int layer, int count) {
 	    super();
 	    JPanel p = new JPanel();
@@ -355,12 +453,18 @@ public class InternalFrameDemo extends DemoModule {
             getVerticalScrollBar().setUnitIncrement(10);
 	}
 	
+	/* (non-Javadoc)
+	 * @see javax.swing.JComponent#getMinimumSize()
+	 */
 	public Dimension getMinimumSize() {
 	    return new Dimension(25, 25);
 	}
 	
     }
     
+    /* (non-Javadoc)
+     * @see DemoModule#updateDragEnabled(boolean)
+     */
     void updateDragEnabled(boolean dragEnabled) {
         windowTitleField.setDragEnabled(dragEnabled);
     }

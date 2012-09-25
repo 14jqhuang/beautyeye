@@ -57,38 +57,57 @@ import javax.swing.SingleSelectionModel;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+// TODO: Auto-generated Javadoc
 /**
- * JTabbedPane Demo
+ * JTabbedPane Demo.
  *
  * @version 1.11 11/17/05
  * @author Jeff Dinkins
  */
 public class TabbedPaneDemo extends DemoModule implements ActionListener {
+    
+    /** The spin. */
     HeadSpin spin;
 
+    /** The tabbedpane. */
     JTabbedPane tabbedpane;
 
+    /** The group. */
     ButtonGroup group;
 
+    /** The top. */
     JRadioButton top;
+    
+    /** The bottom. */
     JRadioButton bottom;
+    
+    /** The left. */
     JRadioButton left;
+    
+    /** The right. */
     JRadioButton right;
 
     /**
      * main method allows us to run as a standalone demo.
+     *
+     * @param args the arguments
      */
     public static void main(String[] args) {
 	TabbedPaneDemo demo = new TabbedPaneDemo(null);
 	demo.mainImpl();
     }
     
+    /* (non-Javadoc)
+     * @see DemoModule#getName()
+     */
     @Override public String getName() {
     	return "TabbedPane";
     };
 
     /**
-     * TabbedPaneDemo Constructor
+     * TabbedPaneDemo Constructor.
+     *
+     * @param swingset the swingset
      */
     public TabbedPaneDemo(SwingSet2 swingset) {
 	// Set the title for this demo, and an icon used to represent this
@@ -151,6 +170,9 @@ public class TabbedPaneDemo extends DemoModule implements ActionListener {
 	);
     }
 
+    /* (non-Javadoc)
+     * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+     */
     public void actionPerformed(ActionEvent e) {
 	if(e.getSource() == top) {
 	    tabbedpane.setTabPlacement(JTabbedPane.TOP);
@@ -163,23 +185,41 @@ public class TabbedPaneDemo extends DemoModule implements ActionListener {
 	}
     }
 
+    /**
+     * The Class HeadSpin.
+     */
     class HeadSpin extends JComponent implements ActionListener {
+	
+	/** The animator. */
 	javax.swing.Timer animator;
 	
+	/** The icon. */
 	ImageIcon icon[] = new ImageIcon[6];
 
+	/** The tmp scale. */
 	int tmpScale;
 
+	/** The Constant numImages. */
 	final static int numImages = 6;
 
+	/** The x. */
 	double x[] = new double[numImages];
+	
+	/** The y. */
 	double y[] = new double[numImages];
 
+	/** The xh. */
 	int xh[] = new int[numImages];
+	
+	/** The yh. */
 	int yh[] = new int[numImages];
 
+	/** The scale. */
 	double scale[] = new double[numImages];
 
+	/**
+	 * Instantiates a new head spin.
+	 */
 	public HeadSpin() {
 	    setBackground(Color.black);
 	    icon[0] = createImageIcon("tabbedpane/ewan.gif", getString("TabbedPaneDemo.ewan"));
@@ -197,11 +237,17 @@ public class TabbedPaneDemo extends DemoModule implements ActionListener {
 	    */
 	}
 	
+	/**
+	 * Go.
+	 */
 	public void go() {
 	    animator = new javax.swing.Timer(22 + 22 + 22, this);
 	    animator.start();
 	}
 
+	/* (non-Javadoc)
+	 * @see javax.swing.JComponent#paint(java.awt.Graphics)
+	 */
 	public void paint(Graphics g) {
 	    g.setColor(getBackground());
 	    g.fillRect(0, 0, getWidth(), getHeight());
@@ -217,8 +263,14 @@ public class TabbedPaneDemo extends DemoModule implements ActionListener {
 	    }
 	}
 
+	/** The rand. */
 	Random rand = new Random();
 
+	/**
+	 * Nudge.
+	 *
+	 * @param i the i
+	 */
 	public void nudge(int i) {
 	    x[i] += (double) rand.nextInt(1000) / 8756;
 	    y[i] += (double) rand.nextInt(1000) / 5432;
@@ -230,6 +282,15 @@ public class TabbedPaneDemo extends DemoModule implements ActionListener {
 	    yh[i] = (int) (Math.sin(y[i]) * nudgeY) + nudgeY;
 	}
 
+	/**
+	 * Squish.
+	 *
+	 * @param g the g
+	 * @param icon the icon
+	 * @param x the x
+	 * @param y the y
+	 * @param scale the scale
+	 */
 	public void squish(Graphics g, ImageIcon icon, int x, int y, double scale) {
 	    if(isVisible()) {
 		g.drawImage(icon.getImage(), x, y,
@@ -239,6 +300,9 @@ public class TabbedPaneDemo extends DemoModule implements ActionListener {
 	    } 
 	}
 	
+	/* (non-Javadoc)
+	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 */
 	public void actionPerformed(ActionEvent e) {
 	    if(isVisible()) {
 		repaint();

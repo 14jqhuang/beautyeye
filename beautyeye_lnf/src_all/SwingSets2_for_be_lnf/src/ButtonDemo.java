@@ -68,56 +68,99 @@ import javax.swing.event.ChangeListener;
 import org.jb2011.lnf.beautyeye.ch3_button.BEButtonUI;
 import org.jb2011.lnf.beautyeye.widget.N9ComponentFactory;
 
+// TODO: Auto-generated Javadoc
 /**
- * JButton, JRadioButton, JToggleButton, JCheckBox Demos
+ * JButton, JRadioButton, JToggleButton, JCheckBox Demos.
  *
  * @version 1.15 11/17/05
  * @author Jeff Dinkins
  */
 public class ButtonDemo extends DemoModule implements ChangeListener {
+    
+    /** The tab. */
     JTabbedPane tab;
 
+    /** The button panel. */
     JPanel buttonPanel = new JPanel();
+    
+    /** The checkbox panel. */
     JPanel checkboxPanel = new JPanel();
+    
+    /** The radio button panel. */
     JPanel radioButtonPanel = new JPanel();
+    
+    /** The toggle button panel. */
     JPanel toggleButtonPanel = new JPanel();
 
+    /** The buttons. */
     Vector buttons = new Vector();
+    
+    /** The checkboxes. */
     Vector checkboxes = new Vector();
+    
+    /** The radiobuttons. */
     Vector radiobuttons = new Vector();
+    
+    /** The togglebuttons. */
     Vector togglebuttons = new Vector();
 
+    /** The current controls. */
     Vector currentControls = buttons;
 
+    /** The button. */
     JButton button;
+    
+    /** The check. */
     JCheckBox check;
+    
+    /** The radio. */
     JRadioButton radio;
+    
+    /** The toggle. */
     JToggleButton toggle;
 
+    /** The border0. */
     EmptyBorder border0 = new EmptyBorder(0,0,0,0);// add by jb2011 2012-08-24
+    
+    /** The border5. */
     EmptyBorder border5 = new EmptyBorder(5,5,5,5);
+    
+    /** The border10. */
     EmptyBorder border10 = new EmptyBorder(10,10,10,10);
 
+    /** The button display listener. */
     ItemListener buttonDisplayListener = null;
+    
+    /** The button pad listener. */
     ItemListener buttonPadListener = null;
 
+    /** The insets0. */
     Insets insets0 = new Insets(0,0,0,0);
+    
+    /** The insets10. */
     Insets insets10 = new Insets(10,10,10,10);
 
     /**
      * main method allows us to run as a standalone demo.
+     *
+     * @param args the arguments
      */
     public static void main(String[] args) {
 	ButtonDemo demo = new ButtonDemo(null);
 	demo.mainImpl();
     }
     
+    /* (non-Javadoc)
+     * @see DemoModule#getName()
+     */
     @Override public String getName() {
     	return "°´Å¥";
     };
 
     /**
-     * ButtonDemo Constructor
+     * ButtonDemo Constructor.
+     *
+     * @param swingset the swingset
      */
     public ButtonDemo(SwingSet2 swingset) {
 	// Set the title for this demo, and an icon used to represent this
@@ -139,6 +182,9 @@ public class ButtonDemo extends DemoModule implements ChangeListener {
 	currentControls = buttons;
     }
 
+    /**
+     * Adds the buttons.
+     */
     public void addButtons() {
 	tab.addTab(getString("ButtonDemo.buttons"), buttonPanel);
 	buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
@@ -229,6 +275,9 @@ public class ButtonDemo extends DemoModule implements ChangeListener {
 	buttonPanel.add(createControls());
     }
 
+    /**
+     * Adds the radio buttons.
+     */
     public void addRadioButtons() {
 	ButtonGroup group = new ButtonGroup();
 
@@ -336,6 +385,9 @@ public class ButtonDemo extends DemoModule implements ChangeListener {
     }
 
 
+    /**
+     * Adds the check boxes.
+     */
     public void addCheckBoxes() {
 	tab.addTab(getString("ButtonDemo.checkboxes"), checkboxPanel);
 	checkboxPanel.setLayout(new BoxLayout(checkboxPanel, BoxLayout.X_AXIS));
@@ -422,10 +474,18 @@ public class ButtonDemo extends DemoModule implements ChangeListener {
 	checkboxPanel.add(createControls());
     }
 
+    /**
+     * Adds the toggle buttons.
+     */
     public void addToggleButtons() {
 	tab.addTab(getString("ButtonDemo.togglebuttons"), toggleButtonPanel);
     }
 
+    /**
+     * Creates the controls.
+     *
+     * @return the j panel
+     */
     public JPanel createControls() {
         JPanel controls = new JPanel() {
             public Dimension getMaximumSize() {
@@ -530,6 +590,9 @@ public class ButtonDemo extends DemoModule implements ChangeListener {
 	return controls;
     }
     
+    /**
+     * Creates the listeners.
+     */
     public void createListeners() {
 	buttonDisplayListener = new ItemListener() {
 		Component c;
@@ -610,6 +673,9 @@ public class ButtonDemo extends DemoModule implements ChangeListener {
 	};
     }
 	
+    /* (non-Javadoc)
+     * @see javax.swing.event.ChangeListener#stateChanged(javax.swing.event.ChangeEvent)
+     */
     public void stateChanged(ChangeEvent e) {
 	SingleSelectionModel model = (SingleSelectionModel) e.getSource();
 	if(model.getSelectedIndex() == 0) {
@@ -623,12 +689,24 @@ public class ButtonDemo extends DemoModule implements ChangeListener {
 	}
     }
 
+    /**
+     * Gets the current controls.
+     *
+     * @return the current controls
+     */
     public Vector getCurrentControls() {
 	return currentControls;
     }
     
     //------------------------------------------------------------------------
     //add by jb2011 START
+    /**
+     * Creates the horizonal hint box.
+     *
+     * @param parent the parent
+     * @param c the c
+     * @param txt the txt
+     */
     public static void createHorizonalHintBox(JPanel parent,JComponent c, String txt)
     {
     	parent.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));

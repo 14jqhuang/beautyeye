@@ -52,30 +52,39 @@ import javax.swing.JScrollPane;
 import javax.swing.JTree;
 import javax.swing.tree.DefaultMutableTreeNode;
 
+// TODO: Auto-generated Javadoc
 /**
- * JTree Demo
+ * JTree Demo.
  *
  * @version 1.13 11/17/05
  * @author Jeff Dinkins
  */
 public class TreeDemo extends DemoModule {
 
+    /** The tree. */
     JTree tree;
 
     /**
      * main method allows us to run as a standalone demo.
+     *
+     * @param args the arguments
      */
     public static void main(String[] args) {
 	TreeDemo demo = new TreeDemo(null);
 	demo.mainImpl();
     }
     
+    /* (non-Javadoc)
+     * @see DemoModule#getName()
+     */
     @Override public String getName() {
     	return "Ê÷";
     };
 
     /**
-     * TreeDemo Constructor
+     * TreeDemo Constructor.
+     *
+     * @param swingset the swingset
      */
     public TreeDemo(SwingSet2 swingset) {
 	// Set the title for this demo, and an icon used to represent this
@@ -85,6 +94,11 @@ public class TreeDemo extends DemoModule {
 	getDemoPanel().add(createTree(), BorderLayout.CENTER);
     }
  
+    /**
+     * Creates the tree.
+     *
+     * @return the j component
+     */
     public JComponent createTree() {
         DefaultMutableTreeNode top = new DefaultMutableTreeNode(getString("TreeDemo.music"));
         DefaultMutableTreeNode catagory = null ;
@@ -146,6 +160,9 @@ public class TreeDemo extends DemoModule {
 //        return tree;
     }
     
+    /* (non-Javadoc)
+     * @see DemoModule#updateDragEnabled(boolean)
+     */
     void updateDragEnabled(boolean dragEnabled) {
         tree.setDragEnabled(dragEnabled);
     }

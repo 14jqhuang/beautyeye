@@ -56,8 +56,9 @@ import javax.swing.JTextField;
 
 import org.jb2011.lnf.beautyeye.ch3_button.BEButtonUI;
 
+// TODO: Auto-generated Javadoc
 /**
- * JOptionPaneDemo
+ * JOptionPaneDemo.
  *
  * @version 1.11 11/17/05
  * @author Jeff Dinkins
@@ -66,18 +67,25 @@ public class OptionPaneDemo extends DemoModule {
 
     /**
      * main method allows us to run as a standalone demo.
+     *
+     * @param args the arguments
      */
     public static void main(String[] args) {
 	OptionPaneDemo demo = new OptionPaneDemo(null);
 	demo.mainImpl();
     }
     
+    /* (non-Javadoc)
+     * @see DemoModule#getName()
+     */
     @Override public String getName() {
     	return "ѡ�";
     };
 
     /**
-     * OptionPaneDemo Constructor
+     * OptionPaneDemo Constructor.
+     *
+     * @param swingset the swingset
      */
     public OptionPaneDemo(SwingSet2 swingset) {
 	// Set the title for this demo, and an icon used to represent this
@@ -126,6 +134,11 @@ public class OptionPaneDemo extends DemoModule {
 	demo.add(Box.createHorizontalGlue());
     }
 
+    /**
+     * Creates the warning dialog button.
+     *
+     * @return the j button
+     */
     public JButton createWarningDialogButton() {
 	Action a = new AbstractAction(getString("OptionPaneDemo.warningbutton")) {
 	    public void actionPerformed(ActionEvent e) {
@@ -140,6 +153,11 @@ public class OptionPaneDemo extends DemoModule {
 	return createButton(a);
     }
 
+    /**
+     * Creates the message dialog button.
+     *
+     * @return the j button
+     */
     public JButton createMessageDialogButton() {
 	Action a = new AbstractAction(getString("OptionPaneDemo.messagebutton")) {
 	    URL img = getClass().getResource("/resources/images/optionpane/bottle.gif");
@@ -155,6 +173,11 @@ public class OptionPaneDemo extends DemoModule {
 	return createButton(a);
     }
 
+    /**
+     * Creates the confirm dialog button.
+     *
+     * @return the j button
+     */
     public JButton createConfirmDialogButton() {
 	Action a = new AbstractAction(getString("OptionPaneDemo.confirmbutton")) {
 	    public void actionPerformed(ActionEvent e) {
@@ -169,6 +192,11 @@ public class OptionPaneDemo extends DemoModule {
 	return createButton(a);
     }
 
+    /**
+     * Creates the input dialog button.
+     *
+     * @return the j button
+     */
     public JButton createInputDialogButton() {
 	Action a = new AbstractAction(getString("OptionPaneDemo.inputbutton")) {
 	    public void actionPerformed(ActionEvent e) {
@@ -183,6 +211,11 @@ public class OptionPaneDemo extends DemoModule {
 	return createButton(a);
     }
 
+    /**
+     * Creates the component dialog button.
+     *
+     * @return the j button
+     */
     public JButton createComponentDialogButton() {
 	Action a = new AbstractAction(getString("OptionPaneDemo.componentbutton")) {
 	    public void actionPerformed(ActionEvent e) {
@@ -242,6 +275,12 @@ public class OptionPaneDemo extends DemoModule {
 	return createButton(a);
     }
 		
+    /**
+     * Creates the button.
+     *
+     * @param a the a
+     * @return the j button
+     */
     public JButton createButton(Action a) {
 	JButton b = new JButton() {
 	    public Dimension getMaximumSize() {

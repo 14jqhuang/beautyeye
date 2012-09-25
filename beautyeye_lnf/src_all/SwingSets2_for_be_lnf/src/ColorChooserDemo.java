@@ -56,37 +56,55 @@ import javax.swing.JPanel;
 
 import org.jb2011.lnf.beautyeye.ch3_button.BEButtonUI;
 
+// TODO: Auto-generated Javadoc
 /**
- * JColorChooserDemo
+ * JColorChooserDemo.
  *
  * @version 1.1 07/16/99
  * @author Jeff Dinkins
  */
 public class ColorChooserDemo extends DemoModule {
 
+    /** The bez anim. */
     BezierAnimationPanel bezAnim;
+    
+    /** The outer color button. */
     JButton outerColorButton = null;
+    
+    /** The background color button. */
     JButton backgroundColorButton = null;
+    
+    /** The gradient a button. */
     JButton gradientAButton = null;
+    
+    /** The gradient b button. */
     JButton gradientBButton = null;
     
     // to store the color chosen from the JColorChooser
+    /** The chosen. */
     private Color chosen;
 
     /**
      * main method allows us to run as a standalone demo.
+     *
+     * @param args the arguments
      */
     public static void main(String[] args) {
 	ColorChooserDemo demo = new ColorChooserDemo(null);
 	demo.mainImpl();
     }
 
+    /* (non-Javadoc)
+     * @see DemoModule#getName()
+     */
     @Override public String getName() {
     	return "ÑÕÉ«´°";
     };
 
     /**
-     * ColorChooserDemo Constructor
+     * ColorChooserDemo Constructor.
+     *
+     * @param swingset the swingset
      */
     public ColorChooserDemo(SwingSet2 swingset) {
 	// Set the title for this demo, and an icon used to represent this
@@ -193,23 +211,45 @@ public class ColorChooserDemo extends DemoModule {
 	p.add(bezAnim);
     }
 
+    /**
+     * The Class ColorSwatch.
+     */
     class ColorSwatch implements Icon {
+	
+	/** The gradient. */
 	String gradient;
+	
+	/** The bez. */
 	BezierAnimationPanel bez;
 
+	/**
+	 * Instantiates a new color swatch.
+	 *
+	 * @param g the g
+	 * @param b the b
+	 */
 	public ColorSwatch(String g, BezierAnimationPanel b) {
 	    bez = b;
 	    gradient = g;
 	}
 
+	/* (non-Javadoc)
+	 * @see javax.swing.Icon#getIconWidth()
+	 */
 	public int getIconWidth() {
 	    return 11;
 	}
 
+	/* (non-Javadoc)
+	 * @see javax.swing.Icon#getIconHeight()
+	 */
 	public int getIconHeight() {
 	    return 11;
 	}
 
+	/* (non-Javadoc)
+	 * @see javax.swing.Icon#paintIcon(java.awt.Component, java.awt.Graphics, int, int)
+	 */
 	public void paintIcon(Component c, Graphics g, int x, int y) {
 	    g.setColor(Color.black);
 	    g.fillRect(x, y, getIconWidth(), getIconHeight());

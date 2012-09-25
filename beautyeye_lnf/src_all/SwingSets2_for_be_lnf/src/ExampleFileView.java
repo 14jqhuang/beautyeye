@@ -44,6 +44,7 @@ import java.util.Hashtable;
 import javax.swing.Icon;
 import javax.swing.filechooser.FileView;
 
+// TODO: Auto-generated Javadoc
 /**
  * A convenience implementation of the FileView interface that
  * manages name, icon, traversable, and file type information.
@@ -68,13 +69,22 @@ import javax.swing.filechooser.FileView;
  * @author Jeff Dinkins
  */
 public class ExampleFileView extends FileView {
+    
+    /** The icons. */
     private Hashtable icons = new Hashtable(5);
+    
+    /** The file descriptions. */
     private Hashtable fileDescriptions = new Hashtable(5);
+    
+    /** The type descriptions. */
     private Hashtable typeDescriptions = new Hashtable(5);
 
     /**
      * The name of the file.  Do nothing special here. Let
      * the system file view handle this.
+     *
+     * @param f the f
+     * @return the name
      * @see FileView#getName
      */
     public String getName(File f) {
@@ -83,6 +93,9 @@ public class ExampleFileView extends FileView {
 
     /**
      * Adds a human readable description of the file.
+     *
+     * @param f the f
+     * @param fileDescription the file description
      */
     public void putDescription(File f, String fileDescription) {
 	fileDescriptions.put(f, fileDescription);
@@ -91,6 +104,8 @@ public class ExampleFileView extends FileView {
     /**
      * A human readable description of the file.
      *
+     * @param f the f
+     * @return the description
      * @see FileView#getDescription
      */
     public String getDescription(File f) {
@@ -100,6 +115,9 @@ public class ExampleFileView extends FileView {
     /**
      * Adds a human readable type description for files. Based on "dot"
      * extension strings, e.g: ".gif". Case is ignored.
+     *
+     * @param extension the extension
+     * @param typeDescription the type description
      */
     public void putTypeDescription(String extension, String typeDescription) {
 	typeDescriptions.put(extension, typeDescription);
@@ -109,6 +127,9 @@ public class ExampleFileView extends FileView {
      * Adds a human readable type description for files of the type of
      * the passed in file. Based on "dot" extension strings, e.g: ".gif".
      * Case is ignored.
+     *
+     * @param f the f
+     * @param typeDescription the type description
      */
     public void putTypeDescription(File f, String typeDescription) {
 	putTypeDescription(getExtension(f), typeDescription);
@@ -117,6 +138,8 @@ public class ExampleFileView extends FileView {
     /**
      * A human readable description of the type of the file.
      *
+     * @param f the f
+     * @return the type description
      * @see FileView#getTypeDescription
      */
     public String getTypeDescription(File f) {
@@ -126,6 +149,9 @@ public class ExampleFileView extends FileView {
     /**
      * Convenience method that returns the "dot" extension for the
      * given file.
+     *
+     * @param f the f
+     * @return the extension
      */
     public String getExtension(File f) {
 	String name = f.getName();
@@ -142,6 +168,9 @@ public class ExampleFileView extends FileView {
     /**
      * Adds an icon based on the file type "dot" extension
      * string, e.g: ".gif". Case is ignored.
+     *
+     * @param extension the extension
+     * @param icon the icon
      */
     public void putIcon(String extension, Icon icon) {
 	icons.put(extension, icon);
@@ -152,6 +181,8 @@ public class ExampleFileView extends FileView {
      * null. You might want to override this to return something more
      * interesting.
      *
+     * @param f the f
+     * @return the icon
      * @see FileView#getIcon
      */
     public Icon getIcon(File f) {
@@ -166,13 +197,15 @@ public class ExampleFileView extends FileView {
     /**
      * Whether the directory is traversable or not. Generic implementation
      * returns true for all directories and special folders.
-     *
+     * 
      * You might want to subtype ExampleFileView to do somethimg more interesting,
      * such as recognize compound documents directories; in such a case you might
      * return a special icon for the directory that makes it look like a regular
      * document, and return false for isTraversable to not allow users to
      * descend into the directory.
      *
+     * @param f the f
+     * @return the boolean
      * @see FileView#isTraversable
      */
     public Boolean isTraversable(File f) {

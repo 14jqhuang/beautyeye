@@ -55,21 +55,37 @@ import javax.swing.SwingConstants;
 
 import org.jb2011.lnf.beautyeye.widget.N9ComponentFactory;
 
+// TODO: Auto-generated Javadoc
 /*
  * The LayoutControlPanel contains controls for setting an 
  * AbstractButton's horizontal and vertical text position and 
  * horizontal and vertical alignment.
  */
 
+/**
+ * The Class LayoutControlPanel.
+ */
 public class LayoutControlPanel extends JPanel implements SwingConstants {
 
+    /** The absolute positions. */
     private boolean  absolutePositions;
+    
+    /** The text position. */
     private DirectionPanel textPosition = null;
+    
+    /** The label alignment. */
     private DirectionPanel labelAlignment = null;
+    
+    /** The demo. */
     private ButtonDemo demo = null;
 
     // private ComponentOrientChanger componentOrientChanger = null;
 
+    /**
+     * Instantiates a new layout control panel.
+     *
+     * @param demo the demo
+     */
     LayoutControlPanel(ButtonDemo demo) {
         this.demo = demo;
 
@@ -145,7 +161,22 @@ public class LayoutControlPanel extends JPanel implements SwingConstants {
     }
 
 
+    /**
+     * The listener interface for receiving orientationChange events.
+     * The class that is interested in processing a orientationChange
+     * event implements this interface, and the object created
+     * with that class is registered with a component using the
+     * component's <code>addOrientationChangeListener<code> method. When
+     * the orientationChange event occurs, that object's appropriate
+     * method is invoked.
+     *
+     * @see OrientationChangeEvent
+     */
     class OrientationChangeListener implements ActionListener {
+        
+        /* (non-Javadoc)
+         * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+         */
         public void actionPerformed( ActionEvent e ) {
             if( !e.getActionCommand().equals("OrientationChanged") ){
                 return;
@@ -184,8 +215,22 @@ public class LayoutControlPanel extends JPanel implements SwingConstants {
         }
     }
 
+    /**
+     * The listener interface for receiving positioning events.
+     * The class that is interested in processing a positioning
+     * event implements this interface, and the object created
+     * with that class is registered with a component using the
+     * component's <code>addPositioningListener<code> method. When
+     * the positioning event occurs, that object's appropriate
+     * method is invoked.
+     *
+     * @see PositioningEvent
+     */
     class PositioningListener implements ItemListener {
 
+	/* (non-Javadoc)
+	 * @see java.awt.event.ItemListener#itemStateChanged(java.awt.event.ItemEvent)
+	 */
 	public void itemStateChanged(ItemEvent e) {
 	    JRadioButton rb = (JRadioButton) e.getSource();
 	    if(rb.getText().equals("Absolute") && rb.isSelected()) {
@@ -222,7 +267,22 @@ public class LayoutControlPanel extends JPanel implements SwingConstants {
 
 
     // Text Position Listener
+    /**
+     * The listener interface for receiving textPosition events.
+     * The class that is interested in processing a textPosition
+     * event implements this interface, and the object created
+     * with that class is registered with a component using the
+     * component's <code>addTextPositionListener<code> method. When
+     * the textPosition event occurs, that object's appropriate
+     * method is invoked.
+     *
+     * @see TextPositionEvent
+     */
     class TextPositionListener implements ActionListener {
+	
+	/* (non-Javadoc)
+	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 */
 	public void actionPerformed(ActionEvent e) {
 	    JRadioButton rb = (JRadioButton) e.getSource();
 	    if(!rb.isSelected()) {
@@ -261,7 +321,22 @@ public class LayoutControlPanel extends JPanel implements SwingConstants {
 
 
     // Label Alignment Listener
+    /**
+     * The listener interface for receiving labelAlignment events.
+     * The class that is interested in processing a labelAlignment
+     * event implements this interface, and the object created
+     * with that class is registered with a component using the
+     * component's <code>addLabelAlignmentListener<code> method. When
+     * the labelAlignment event occurs, that object's appropriate
+     * method is invoked.
+     *
+     * @see LabelAlignmentEvent
+     */
     class LabelAlignmentListener implements  ActionListener {
+	
+	/* (non-Javadoc)
+	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 */
 	public void actionPerformed(ActionEvent e) {
 	    JRadioButton rb = (JRadioButton) e.getSource();
 	    if(!rb.isSelected()) {
@@ -300,6 +375,13 @@ public class LayoutControlPanel extends JPanel implements SwingConstants {
     };
 
     // Position
+    /**
+     * Sets the position.
+     *
+     * @param c the c
+     * @param hPos the h pos
+     * @param vPos the v pos
+     */
     void setPosition(Component c, int hPos, int vPos) {
         boolean ltr = true;
         ltr = c.getComponentOrientation().isLeftToRight();
@@ -327,6 +409,13 @@ public class LayoutControlPanel extends JPanel implements SwingConstants {
         }
     }
 
+    /**
+     * Sets the alignment.
+     *
+     * @param c the c
+     * @param hPos the h pos
+     * @param vPos the v pos
+     */
     void setAlignment(Component c, int hPos, int vPos) {
         boolean ltr = true;
         ltr = c.getComponentOrientation().isLeftToRight();

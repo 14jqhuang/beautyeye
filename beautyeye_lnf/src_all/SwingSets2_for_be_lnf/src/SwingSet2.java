@@ -107,6 +107,7 @@ import javax.swing.plaf.metal.OceanTheme;
 import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
 import org.jb2011.lnf.beautyeye.widget.N9ComponentFactory;
 
+// TODO: Auto-generated Javadoc
 /**
  * A demo that shows all of the Swing components.
  *
@@ -114,6 +115,8 @@ import org.jb2011.lnf.beautyeye.widget.N9ComponentFactory;
  * @author Jeff Dinkins
  */
 public class SwingSet2 extends JPanel {
+	
+	/** The demos. */
 	String[] demos = {
 			"ButtonDemo",
 			"ColorChooserDemo",
@@ -132,6 +135,9 @@ public class SwingSet2 extends JPanel {
 			"TreeDemo"
 	};
 
+	/**
+	 * Load demos.
+	 */
 	void loadDemos() {
 		for(int i = 0; i < demos.length;) {
 			if(isApplet() && demos[i].equals("FileChooserDemo")) {
@@ -147,94 +153,153 @@ public class SwingSet2 extends JPanel {
 	// Possible Look & Feels
 	//    private static final String mac      =
 	//            "com.sun.java.swing.plaf.mac.MacLookAndFeel";
+	/** The Constant metal. */
 	private static final String metal    =
 		"javax.swing.plaf.metal.MetalLookAndFeel";
 	//    private static final String motif    =
 	//            "com.sun.java.swing.plaf.motif.MotifLookAndFeel";
+	/** The Constant windows. */
 	private static final String windows  =
 		"com.sun.java.swing.plaf.windows.WindowsLookAndFeel";
+	
+	/** The Constant gtk. */
 	private static final String gtk  =
 		"org.jb2011.lnf.windows2.Windows2LookAndFeel";
 
 	// The current Look & Feel
+	/** The current look and feel. */
 	private static String currentLookAndFeel = metal;
 
 	// List of demos
+	/** The demos list. */
 	private ArrayList<DemoModule> demosList = new ArrayList<DemoModule>();
 
 	// The preferred size of the demo
+	/** The Constant PREFERRED_WIDTH. */
 	private static final int PREFERRED_WIDTH = 720;
+	
+	/** The Constant PREFERRED_HEIGHT. */
 	private static final int PREFERRED_HEIGHT = 640;
 
 	// Box spacers
+	/** The HGAP. */
 	private Dimension HGAP = new Dimension(1,5);
+	
+	/** The VGAP. */
 	private Dimension VGAP = new Dimension(5,1);
 
 	// Resource bundle for internationalized and accessible text
+	/** The bundle. */
 	private ResourceBundle bundle = null;
 
 	// A place to hold on to the visible demo
+	/** The current demo. */
 	private DemoModule currentDemo = null;
+	
+	/** The demo panel. */
 	private JPanel demoPanel = null;
 
 	// About Box
+	/** The about box. */
 	private JDialog aboutBox = null;
 
 	// Status Bar
+	/** The status field. */
 	private JLabel statusField = null;
 
 	// Tool Bar
+	/** The toolbar. */
 	private ToggleButtonToolBar toolbar = null;
+	
+	/** The toolbar group. */
 	private ButtonGroup toolbarGroup = new ButtonGroup();
 
 	// Menus
+	/** The menu bar. */
 	private JMenuBar menuBar = null;
+	
+	/** The laf menu. */
 	private JMenu lafMenu = null;
+	
+	/** The themes menu. */
 	private JMenu themesMenu = null;
+	
+	/** The audio menu. */
 	private JMenu audioMenu = null;
+	
+	/** The options menu. */
 	private JMenu optionsMenu = null;
+	
+	/** The laf menu group. */
 	private ButtonGroup lafMenuGroup = new ButtonGroup();
+	
+	/** The themes menu group. */
 	private ButtonGroup themesMenuGroup = new ButtonGroup();
+	
+	/** The audio menu group. */
 	private ButtonGroup audioMenuGroup = new ButtonGroup();
 
 	// Popup menu
+	/** The popup menu. */
 	private JPopupMenu popupMenu = null;
+	
+	/** The popup menu group. */
 	private ButtonGroup popupMenuGroup = new ButtonGroup();
 
 	// Used only if swingset is an application 
+	/** The frame. */
 	private JFrame frame = null;
 
 	// Used only if swingset is an applet 
+	/** The applet. */
 	private SwingSet2Applet applet = null;
 
 	// To debug or not to debug, that is the question
+	/** The DEBUG. */
 	private boolean DEBUG = true;
+	
+	/** The debug counter. */
 	private int debugCounter = 0;
 
 	// The tab pane that holds the demo
+	/** The tabbed pane. */
 	private JTabbedPane tabbedPane = null;
 
+	/** The demo src pane. */
 	private JEditorPane demoSrcPane = null;
 
 
 	// contentPane cache, saved from the applet or application frame
+	/** The content pane. */
 	Container contentPane = null;
 
 
 	// number of swingsets - for multiscreen
 	// keep track of the number of SwingSets created - we only want to exit
 	// the program when the last one has been closed.
+	/** The num s ss. */
 	private static int numSSs = 0;
+	
+	/** The swing sets. */
 	private static Vector<SwingSet2> swingSets = new Vector<SwingSet2>();
 
+	/** The drag enabled. */
 	private boolean dragEnabled = false;
 
+	/**
+	 * Instantiates a new swing set2.
+	 *
+	 * @param applet the applet
+	 */
 	public SwingSet2(SwingSet2Applet applet) {
 		this(applet, null);
 	}
 
 	/**
-	 * SwingSet2 Constructor
+	 * SwingSet2 Constructor.
+	 *
+	 * @param applet the applet
+	 * @param gc the gc
 	 */
 	public SwingSet2(SwingSet2Applet applet, GraphicsConfiguration gc) {
 		// Note that applet may be null if this is started as an application
@@ -268,16 +333,16 @@ public class SwingSet2 extends JPanel {
 
 	/**
 	 * SwingSet2 Main. Called only if we're an application, not an applet.
+	 *
+	 * @param args the arguments
+	 * @throws Exception the exception
 	 */
 	public static void main(String[] args) throws Exception {
 		// Create SwingSet on the default monitor
-//		UIManager.put("swing.boldMetal", Boolean.FALSE);
-		
 //		BeautyEyeLNFHelper.frameBorderStyle = 
 //			BeautyEyeLNFHelper.FrameBorderStyle.osLookAndFeelDecorated;
 ////		UIManager.setLookAndFeel(BeautyEyeLNFHelper.getBeautyEyeLNFCrossPlatform());//new WindowsLookAndFeel());
-//		
-//		
+//		UIManager.put("RootPane.setupButtonVisible", false);
 		BeautyEyeLNFHelper.debug = true;
 //		BeautyEyeLNFHelper.translucencyAtFrameInactive = false;
 		BeautyEyeLNFHelper.launchBeautyEyeLNF();
@@ -298,6 +363,9 @@ public class SwingSet2 extends JPanel {
 
 
 
+	/**
+	 * Initialize demo.
+	 */
 	public void initializeDemo() {
 		JPanel top = new JPanel();
 		top.setLayout(new BorderLayout());
@@ -362,8 +430,25 @@ public class SwingSet2 extends JPanel {
 		);
 	}
 
+	/** The current tab demo. */
 	DemoModule currentTabDemo = null;
+	
+	/**
+	 * The listener interface for receiving tab events.
+	 * The class that is interested in processing a tab
+	 * event implements this interface, and the object created
+	 * with that class is registered with a component using the
+	 * component's <code>addTabListener<code> method. When
+	 * the tab event occurs, that object's appropriate
+	 * method is invoked.
+	 *
+	 * @see TabEvent
+	 */
 	class TabListener implements ChangeListener {
+		
+		/* (non-Javadoc)
+		 * @see javax.swing.event.ChangeListener#stateChanged(javax.swing.event.ChangeEvent)
+		 */
 		public void stateChanged(ChangeEvent e) {
 			SingleSelectionModel model = (SingleSelectionModel) e.getSource();
 			boolean srcSelected = model.getSelectedIndex() == 1;
@@ -380,7 +465,9 @@ public class SwingSet2 extends JPanel {
 
 
 	/**
-	 * Create menus
+	 * Create menus.
+	 *
+	 * @return the j menu bar
 	 */
 	public JMenuBar createMenus() {
 		JMenuItem mi;
@@ -556,7 +643,14 @@ public class SwingSet2 extends JPanel {
 	}
 
 	/**
-	 * Create a checkbox menu menu item
+	 * Create a checkbox menu menu item.
+	 *
+	 * @param menu the menu
+	 * @param label the label
+	 * @param mnemonic the mnemonic
+	 * @param accessibleDescription the accessible description
+	 * @param action the action
+	 * @return the j menu item
 	 */
 	private JMenuItem createCheckBoxMenuItem(JMenu menu, String label,
 			String mnemonic,
@@ -574,6 +668,14 @@ public class SwingSet2 extends JPanel {
 	/**
 	 * Create a radio button menu menu item for items that are part of a
 	 * button group.
+	 *
+	 * @param menu the menu
+	 * @param label the label
+	 * @param mnemonic the mnemonic
+	 * @param accessibleDescription the accessible description
+	 * @param action the action
+	 * @param buttonGroup the button group
+	 * @return the j menu item
 	 */
 	private JMenuItem createButtonGroupMenuItem(JMenu menu, String label,
 			String mnemonic,
@@ -591,7 +693,14 @@ public class SwingSet2 extends JPanel {
 	}
 
 	/**
-	 * Create the theme's audio submenu
+	 * Create the theme's audio submenu.
+	 *
+	 * @param menu the menu
+	 * @param label the label
+	 * @param mnemonic the mnemonic
+	 * @param accessibleDescription the accessible description
+	 * @param action the action
+	 * @return the j menu item
 	 */
 	public JMenuItem createAudioMenuItem(JMenu menu, String label,
 			String mnemonic,
@@ -607,7 +716,14 @@ public class SwingSet2 extends JPanel {
 	}
 
 	/**
-	 * Creates a generic menu item
+	 * Creates a generic menu item.
+	 *
+	 * @param menu the menu
+	 * @param label the label
+	 * @param mnemonic the mnemonic
+	 * @param accessibleDescription the accessible description
+	 * @param action the action
+	 * @return the j menu item
 	 */
 	public JMenuItem createMenuItem(JMenu menu, String label, String mnemonic,
 			String accessibleDescription, Action action) {
@@ -624,7 +740,14 @@ public class SwingSet2 extends JPanel {
 	}
 
 	/**
-	 * Creates a JRadioButtonMenuItem for the Themes menu
+	 * Creates a JRadioButtonMenuItem for the Themes menu.
+	 *
+	 * @param menu the menu
+	 * @param label the label
+	 * @param mnemonic the mnemonic
+	 * @param accessibleDescription the accessible description
+	 * @param theme the theme
+	 * @return the j menu item
 	 */
 	public JMenuItem createThemesMenuItem(JMenu menu, String label, String mnemonic,
 			String accessibleDescription, MetalTheme theme) {
@@ -638,7 +761,14 @@ public class SwingSet2 extends JPanel {
 	}
 
 	/**
-	 * Creates a JRadioButtonMenuItem for the Look and Feel menu
+	 * Creates a JRadioButtonMenuItem for the Look and Feel menu.
+	 *
+	 * @param menu the menu
+	 * @param label the label
+	 * @param mnemonic the mnemonic
+	 * @param accessibleDescription the accessible description
+	 * @param laf the laf
+	 * @return the j menu item
 	 */
 	public JMenuItem createLafMenuItem(JMenu menu, String label, String mnemonic,
 			String accessibleDescription, String laf) {
@@ -654,7 +784,11 @@ public class SwingSet2 extends JPanel {
 	}
 
 	/**
-	 * Creates a multi-screen menu item
+	 * Creates a multi-screen menu item.
+	 *
+	 * @param menu the menu
+	 * @param screen the screen
+	 * @return the j menu item
 	 */
 	public JMenuItem createMultiscreenMenuItem(JMenu menu, int screen) {
 		JMenuItem mi = null;
@@ -676,6 +810,11 @@ public class SwingSet2 extends JPanel {
 		return mi;
 	}
 
+	/**
+	 * Creates the popup menu.
+	 *
+	 * @return the j popup menu
+	 */
 	public JPopupMenu createPopupMenu() {
 		JPopupMenu popup = new JPopupMenu("JPopupMenu demo");
 
@@ -699,7 +838,14 @@ public class SwingSet2 extends JPanel {
 	}
 
 	/**
-	 * Creates a JMenuItem for the Look and Feel popup menu
+	 * Creates a JMenuItem for the Look and Feel popup menu.
+	 *
+	 * @param menu the menu
+	 * @param label the label
+	 * @param mnemonic the mnemonic
+	 * @param accessibleDescription the accessible description
+	 * @param laf the laf
+	 * @return the j menu item
 	 */
 	public JMenuItem createPopupMenuItem(JPopupMenu menu, String label, String mnemonic,
 			String accessibleDescription, String laf) {
@@ -725,7 +871,10 @@ public class SwingSet2 extends JPanel {
 
 
 	/**
-	 * Add a demo to the toolbar
+	 * Add a demo to the toolbar.
+	 *
+	 * @param demo the demo
+	 * @return the demo module
 	 */
 	public DemoModule addDemo(DemoModule demo) {
 		demosList.add(demo);
@@ -756,7 +905,9 @@ public class SwingSet2 extends JPanel {
 
 
 	/**
-	 * Sets the current demo
+	 * Sets the current demo.
+	 *
+	 * @param demo the new demo
 	 */
 	public void setDemo(DemoModule demo) {
 		currentDemo = demo;
@@ -780,7 +931,7 @@ public class SwingSet2 extends JPanel {
 
 	/**
 	 * Bring up the SwingSet2 demo by showing the frame (only
-	 * applicable if coming up as an application, not an applet);
+	 * applicable if coming up as an application, not an applet);.
 	 */
 	public void showSwingSet2() {
 		if(!isApplet() && getFrame() != null) {
@@ -817,7 +968,9 @@ public class SwingSet2 extends JPanel {
 	// *******************************************************
 
 	/**
-	 * Loads a demo from a classname
+	 * Loads a demo from a classname.
+	 *
+	 * @param classname the classname
 	 */
 	void loadDemo(String classname) {
 		setStatus(getString("Status.loading") + getString(classname + ".name"));
@@ -838,10 +991,12 @@ public class SwingSet2 extends JPanel {
 	 * is supported. Returns false if the LookAndFeel is not supported
 	 * and/or if there is any kind of error checking if the LookAndFeel
 	 * is supported.
-	 *
+	 * 
 	 * The L&F menu will use this method to detemine whether the various
 	 * L&F options should be active or inactive.
 	 *
+	 * @param laf the laf
+	 * @return true, if is available look and feel
 	 */
 	protected boolean isAvailableLookAndFeel(String laf) {
 		try { 
@@ -855,14 +1010,18 @@ public class SwingSet2 extends JPanel {
 
 
 	/**
-	 * Determines if this is an applet or application
+	 * Determines if this is an applet or application.
+	 *
+	 * @return true, if is applet
 	 */
 	public boolean isApplet() {
 		return (applet != null);
 	}
 
 	/**
-	 * Returns the applet instance
+	 * Returns the applet instance.
+	 *
+	 * @return the applet
 	 */
 	public SwingSet2Applet getApplet() {
 		return applet;
@@ -870,28 +1029,36 @@ public class SwingSet2 extends JPanel {
 
 
 	/**
-	 * Returns the frame instance
+	 * Returns the frame instance.
+	 *
+	 * @return the frame
 	 */
 	public JFrame getFrame() {
 		return frame;
 	}
 
 	/**
-	 * Returns the menubar
+	 * Returns the menubar.
+	 *
+	 * @return the menu bar
 	 */
 	public JMenuBar getMenuBar() {
 		return menuBar;
 	}
 
 	/**
-	 * Returns the toolbar
+	 * Returns the toolbar.
+	 *
+	 * @return the tool bar
 	 */
 	public ToggleButtonToolBar getToolBar() {
 		return toolbar;
 	}
 
 	/**
-	 * Returns the toolbar button group
+	 * Returns the toolbar button group.
+	 *
+	 * @return the tool bar group
 	 */
 	public ButtonGroup getToolBarGroup() {
 		return toolbarGroup;
@@ -899,7 +1066,9 @@ public class SwingSet2 extends JPanel {
 
 	/**
 	 * Returns the content pane wether we're in an applet
-	 * or application
+	 * or application.
+	 *
+	 * @return the content pane
 	 */
 	public Container getContentPane() {
 		if(contentPane == null) {
@@ -915,6 +1084,9 @@ public class SwingSet2 extends JPanel {
 	/**
 	 * Create a frame for SwingSet2 to reside in if brought up
 	 * as an application.
+	 *
+	 * @param gc the gc
+	 * @return the j frame
 	 */
 	public static JFrame createFrame(GraphicsConfiguration gc) {
 		JFrame frame = new JFrame(gc);
@@ -937,7 +1109,9 @@ public class SwingSet2 extends JPanel {
 
 
 	/**
-	 * Set the status 
+	 * Set the status.
+	 *
+	 * @param s the new status
 	 */
 	public void setStatus(String s) {
 		// do the following on the gui thread
@@ -951,6 +1125,9 @@ public class SwingSet2 extends JPanel {
 
 	/**
 	 * This method returns a string from the demo's resource bundle.
+	 *
+	 * @param key the key
+	 * @return the string
 	 */
 	public String getString(String key) {
 		String value = null;
@@ -965,6 +1142,11 @@ public class SwingSet2 extends JPanel {
 		return value;
 	}
 
+	/**
+	 * Sets the drag enabled.
+	 *
+	 * @param dragEnabled the new drag enabled
+	 */
 	void setDragEnabled(boolean dragEnabled) {
 		if (dragEnabled == this.dragEnabled) {
 			return;
@@ -979,6 +1161,11 @@ public class SwingSet2 extends JPanel {
 		demoSrcPane.setDragEnabled(dragEnabled);
 	}
 
+	/**
+	 * Checks if is drag enabled.
+	 *
+	 * @return true, if is drag enabled
+	 */
 	boolean isDragEnabled() {
 		return dragEnabled;
 	}
@@ -986,6 +1173,8 @@ public class SwingSet2 extends JPanel {
 	/**
 	 * Returns the resource bundle associated with this demo. Used
 	 * to get accessable and internationalized strings.
+	 *
+	 * @return the resource bundle
 	 */
 	public ResourceBundle getResourceBundle() {
 		if(bundle == null) {
@@ -997,6 +1186,9 @@ public class SwingSet2 extends JPanel {
 	/**
 	 * Returns a mnemonic from the resource bundle. Typically used as
 	 * keyboard shortcuts in menu items.
+	 *
+	 * @param key the key
+	 * @return the mnemonic
 	 */
 	public char getMnemonic(String key) {
 		return (getString(key)).charAt(0);
@@ -1004,6 +1196,10 @@ public class SwingSet2 extends JPanel {
 
 	/**
 	 * Creates an icon from an image contained in the "images" directory.
+	 *
+	 * @param filename the filename
+	 * @param description the description
+	 * @return the image icon
 	 */
 	public ImageIcon createImageIcon(String filename, String description) {
 		String path = "/resources/images/" + filename;
@@ -1012,6 +1208,8 @@ public class SwingSet2 extends JPanel {
 
 	/**
 	 * If DEBUG is defined, prints debug information out to std ouput.
+	 *
+	 * @param s the s
 	 */
 	public void debug(String s) {
 		if(DEBUG) {
@@ -1020,7 +1218,9 @@ public class SwingSet2 extends JPanel {
 	}
 
 	/**
-	 * Stores the current L&F, and calls updateLookAndFeel, below
+	 * Stores the current L&F, and calls updateLookAndFeel, below.
+	 *
+	 * @param laf the new look and feel
 	 */
 	public void setLookAndFeel(String laf) {
 		if(currentLookAndFeel != laf) {
@@ -1048,6 +1248,9 @@ public class SwingSet2 extends JPanel {
 		}
 	}
 
+	/**
+	 * Update this swing set.
+	 */
 	private void updateThisSwingSet() {
 		if (isApplet()) {
 			SwingUtilities.updateComponentTreeUI(getApplet());
@@ -1067,7 +1270,7 @@ public class SwingSet2 extends JPanel {
 	}
 
 	/**
-	 * Sets the current L&F on each demo module
+	 * Sets the current L&F on each demo module.
 	 */
 	public void updateLookAndFeel() {
 		try {
@@ -1087,7 +1290,9 @@ public class SwingSet2 extends JPanel {
 	}
 
 	/**
-	 * Loads and puts the source code text into JEditorPane in the "Source Code" tab
+	 * Loads and puts the source code text into JEditorPane in the "Source Code" tab.
+	 *
+	 * @param demo the new source code
 	 */
 	public void setSourceCode(DemoModule demo) {
 		// do the following on the gui thread
@@ -1103,14 +1308,29 @@ public class SwingSet2 extends JPanel {
 	// *******************************************************
 	// **************   ToggleButtonToolbar  *****************
 	// *******************************************************
+	/** The zero insets. */
 	static Insets zeroInsets = new Insets(3,2,3,2);
+	
+	/**
+	 * The Class ToggleButtonToolBar.
+	 */
 	protected class ToggleButtonToolBar extends JToolBar {
+		
+		/**
+		 * Instantiates a new toggle button tool bar.
+		 */
 		public ToggleButtonToolBar() {
 			super();
 			
 			this.setFloatable(true);
 		}
 
+		/**
+		 * Adds the toggle button.
+		 *
+		 * @param a the a
+		 * @return the j toggle button
+		 */
 		JToggleButton addToggleButton(Action a) {
 			JToggleButton tb = new JToggleButton(
 					(String)a.getValue(Action.NAME),null
@@ -1129,8 +1349,14 @@ public class SwingSet2 extends JPanel {
 	// *******************************************************
 	// *********  ToolBar Panel / Docking Listener ***********
 	// *******************************************************
+	/**
+	 * The Class ToolBarPanel.
+	 */
 	class ToolBarPanel extends JPanel implements ContainerListener {
 
+		/* (non-Javadoc)
+		 * @see javax.swing.JComponent#contains(int, int)
+		 */
 		public boolean contains(int x, int y) {
 			Component c = getParent();
 			if (c != null) {
@@ -1142,6 +1368,9 @@ public class SwingSet2 extends JPanel {
 			}
 		}
 
+		/* (non-Javadoc)
+		 * @see java.awt.event.ContainerListener#componentAdded(java.awt.event.ContainerEvent)
+		 */
 		public void componentAdded(ContainerEvent e) {
 			Container c = e.getContainer().getParent();
 			if (c != null) {
@@ -1150,6 +1379,9 @@ public class SwingSet2 extends JPanel {
 			}
 		}
 
+		/* (non-Javadoc)
+		 * @see java.awt.event.ContainerListener#componentRemoved(java.awt.event.ContainerEvent)
+		 */
 		public void componentRemoved(ContainerEvent e) {
 			Container c = e.getContainer().getParent();
 			if (c != null) {
@@ -1171,14 +1403,27 @@ public class SwingSet2 extends JPanel {
 	 * "must haves" needed in most runnables for this demo.
 	 */
 	class SwingSetRunnable implements Runnable {
+		
+		/** The swingset. */
 		protected SwingSet2 swingset;
+		
+		/** The obj. */
 		protected Object obj;
 
+		/**
+		 * Instantiates a new swing set runnable.
+		 *
+		 * @param swingset the swingset
+		 * @param obj the obj
+		 */
 		public SwingSetRunnable(SwingSet2 swingset, Object obj) {
 			this.swingset = swingset;
 			this.obj = obj;
 		}
 
+		/* (non-Javadoc)
+		 * @see java.lang.Runnable#run()
+		 */
 		public void run() {
 		}
 	}
@@ -1188,57 +1433,120 @@ public class SwingSet2 extends JPanel {
 	// ********************   Actions  ***********************
 	// *******************************************************
 
+	/**
+	 * The Class SwitchToDemoAction.
+	 */
 	public class SwitchToDemoAction extends AbstractAction {
+		
+		/** The swingset. */
 		SwingSet2 swingset;
+		
+		/** The demo. */
 		DemoModule demo;
 
+		/**
+		 * Instantiates a new switch to demo action.
+		 *
+		 * @param swingset the swingset
+		 * @param demo the demo
+		 */
 		public SwitchToDemoAction(SwingSet2 swingset, DemoModule demo) {
 			super(demo.getName(), demo.getIcon());
 			this.swingset = swingset;
 			this.demo = demo;
 		}
 
+		/* (non-Javadoc)
+		 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+		 */
 		public void actionPerformed(ActionEvent e) {
 			swingset.setDemo(demo);
 		}
 	}
 
+	/**
+	 * The Class OkAction.
+	 */
 	class OkAction extends AbstractAction {
+		
+		/** The about box. */
 		JDialog aboutBox;
 
+		/**
+		 * Instantiates a new ok action.
+		 *
+		 * @param aboutBox the about box
+		 */
 		protected OkAction(JDialog aboutBox) {
 			super("OkAction");
 			this.aboutBox = aboutBox;
 		}
 
+		/* (non-Javadoc)
+		 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+		 */
 		public void actionPerformed(ActionEvent e) {
 			aboutBox.setVisible(false);
 		}
 	}
 
+	/**
+	 * The Class ChangeLookAndFeelAction.
+	 */
 	class ChangeLookAndFeelAction extends AbstractAction {
+		
+		/** The swingset. */
 		SwingSet2 swingset;
+		
+		/** The laf. */
 		String laf;
+		
+		/**
+		 * Instantiates a new change look and feel action.
+		 *
+		 * @param swingset the swingset
+		 * @param laf the laf
+		 */
 		protected ChangeLookAndFeelAction(SwingSet2 swingset, String laf) {
 			super("ChangeTheme");
 			this.swingset = swingset;
 			this.laf = laf;
 		}
 
+		/* (non-Javadoc)
+		 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+		 */
 		public void actionPerformed(ActionEvent e) {
 			swingset.setLookAndFeel(laf);
 		}
 	}
 
+	/**
+	 * The Class ActivatePopupMenuAction.
+	 */
 	class ActivatePopupMenuAction extends AbstractAction {
+		
+		/** The swingset. */
 		SwingSet2 swingset;
+		
+		/** The popup. */
 		JPopupMenu popup;
+		
+		/**
+		 * Instantiates a new activate popup menu action.
+		 *
+		 * @param swingset the swingset
+		 * @param popup the popup
+		 */
 		protected ActivatePopupMenuAction(SwingSet2 swingset, JPopupMenu popup) {
 			super("ActivatePopupMenu");
 			this.swingset = swingset;
 			this.popup = popup;
 		}
 
+		/* (non-Javadoc)
+		 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+		 */
 		public void actionPerformed(ActionEvent e) {
 			Dimension invokerSize = getSize();
 			Dimension popupSize = popup.getPreferredSize();
@@ -1248,12 +1556,27 @@ public class SwingSet2 extends JPanel {
 	}
 
 	// Turns on all possible auditory feedback
+	/**
+	 * The Class OnAudioAction.
+	 */
 	class OnAudioAction extends AbstractAction {
+		
+		/** The swingset. */
 		SwingSet2 swingset;
+		
+		/**
+		 * Instantiates a new on audio action.
+		 *
+		 * @param swingset the swingset
+		 */
 		protected OnAudioAction(SwingSet2 swingset) {
 			super("Audio On");
 			this.swingset = swingset;
 		}
+		
+		/* (non-Javadoc)
+		 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+		 */
 		public void actionPerformed(ActionEvent e) {
 			//* Jack Jiang 于2012-09-11日注释掉
 //			UIManager.put("AuditoryCues.playList",
@@ -1263,12 +1586,27 @@ public class SwingSet2 extends JPanel {
 	}
 
 	// Turns on the default amount of auditory feedback
+	/**
+	 * The Class DefaultAudioAction.
+	 */
 	class DefaultAudioAction extends AbstractAction {
+		
+		/** The swingset. */
 		SwingSet2 swingset;
+		
+		/**
+		 * Instantiates a new default audio action.
+		 *
+		 * @param swingset the swingset
+		 */
 		protected DefaultAudioAction(SwingSet2 swingset) {
 			super("Audio Default");
 			this.swingset = swingset;
 		}
+		
+		/* (non-Javadoc)
+		 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+		 */
 		public void actionPerformed(ActionEvent e) {
 			//* Jack Jiang 于2012-09-11日注释掉
 //			UIManager.put("AuditoryCues.playList",
@@ -1278,12 +1616,27 @@ public class SwingSet2 extends JPanel {
 	}
 
 	// Turns off all possible auditory feedback
+	/**
+	 * The Class OffAudioAction.
+	 */
 	class OffAudioAction extends AbstractAction {
+		
+		/** The swingset. */
 		SwingSet2 swingset;
+		
+		/**
+		 * Instantiates a new off audio action.
+		 *
+		 * @param swingset the swingset
+		 */
 		protected OffAudioAction(SwingSet2 swingset) {
 			super("Audio Off");
 			this.swingset = swingset;
 		}
+		
+		/* (non-Javadoc)
+		 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+		 */
 		public void actionPerformed(ActionEvent e) {
 			//* Jack Jiang 于2012-09-11日注释掉
 //			UIManager.put("AuditoryCues.playList",
@@ -1293,22 +1646,42 @@ public class SwingSet2 extends JPanel {
 	}
 
 	// Turns on or off the tool tips for the demo.
+	/**
+	 * The Class ToolTipAction.
+	 */
 	class ToolTipAction extends AbstractAction {
+		
+		/**
+		 * Instantiates a new tool tip action.
+		 */
 		protected ToolTipAction() {
 			super("ToolTip Control");
 		}
 
+		/* (non-Javadoc)
+		 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+		 */
 		public void actionPerformed(ActionEvent e) {
 			boolean status = ((JCheckBoxMenuItem)e.getSource()).isSelected();
 			ToolTipManager.sharedInstance().setEnabled(status);
 		}
 	}
 
+	/**
+	 * The Class DragSupportAction.
+	 */
 	class DragSupportAction extends AbstractAction {
+		
+		/**
+		 * Instantiates a new drag support action.
+		 */
 		protected DragSupportAction() {
 			super("DragSupport Control");
 		}
 
+		/* (non-Javadoc)
+		 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+		 */
 		public void actionPerformed(ActionEvent e) {
 			boolean dragEnabled = ((JCheckBoxMenuItem)e.getSource()).isSelected();
 			if (isApplet()) {
@@ -1321,40 +1694,85 @@ public class SwingSet2 extends JPanel {
 		}
 	}
 
+	/**
+	 * The Class ChangeThemeAction.
+	 */
 	class ChangeThemeAction extends AbstractAction {
+		
+		/** The swingset. */
 		SwingSet2 swingset;
+		
+		/** The theme. */
 		MetalTheme theme;
+		
+		/**
+		 * Instantiates a new change theme action.
+		 *
+		 * @param swingset the swingset
+		 * @param theme the theme
+		 */
 		protected ChangeThemeAction(SwingSet2 swingset, MetalTheme theme) {
 			super("ChangeTheme");
 			this.swingset = swingset;
 			this.theme = theme;
 		}
 
+		/* (non-Javadoc)
+		 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+		 */
 		public void actionPerformed(ActionEvent e) {
 			MetalLookAndFeel.setCurrentTheme(theme);
 			swingset.updateLookAndFeel();
 		}
 	}
 
+	/**
+	 * The Class ExitAction.
+	 */
 	class ExitAction extends AbstractAction {
+		
+		/** The swingset. */
 		SwingSet2 swingset;
+		
+		/**
+		 * Instantiates a new exit action.
+		 *
+		 * @param swingset the swingset
+		 */
 		protected ExitAction(SwingSet2 swingset) {
 			super("ExitAction");
 			this.swingset = swingset;
 		}
 
+		/* (non-Javadoc)
+		 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+		 */
 		public void actionPerformed(ActionEvent e) {
 			System.exit(0);
 		}
 	}
 
+	/**
+	 * The Class AboutAction.
+	 */
 	class AboutAction extends AbstractAction {
+		
+		/** The swingset. */
 		SwingSet2 swingset;
+		
+		/**
+		 * Instantiates a new about action.
+		 *
+		 * @param swingset the swingset
+		 */
 		protected AboutAction(SwingSet2 swingset) {
 			super("AboutAction");
 			this.swingset = swingset;
 		}
 
+		/* (non-Javadoc)
+		 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+		 */
 		public void actionPerformed(ActionEvent e) {
 			if(aboutBox == null) {
 				// JPanel panel = new JPanel(new BorderLayout());
@@ -1386,14 +1804,31 @@ public class SwingSet2 extends JPanel {
 		}
 	}
 
+	/**
+	 * The Class MultiScreenAction.
+	 */
 	class MultiScreenAction extends AbstractAction {
+		
+		/** The Constant ALL_SCREENS. */
 		static final int ALL_SCREENS = -1;
+		
+		/** The screen. */
 		int screen;
+		
+		/**
+		 * Instantiates a new multi screen action.
+		 *
+		 * @param swingset the swingset
+		 * @param screen the screen
+		 */
 		protected MultiScreenAction(SwingSet2 swingset, int screen) {
 			super("MultiScreenAction");
 			this.screen = screen;
 		}
 
+		/* (non-Javadoc)
+		 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+		 */
 		public void actionPerformed(ActionEvent e) {
 			GraphicsDevice[] gds = GraphicsEnvironment.
 			getLocalGraphicsEnvironment().
@@ -1417,33 +1852,64 @@ public class SwingSet2 extends JPanel {
 	// **********************  Misc  *************************
 	// *******************************************************
 
+	/**
+	 * The Class DemoLoadThread.
+	 */
 	class DemoLoadThread extends Thread {
+		
+		/** The swingset. */
 		SwingSet2 swingset;
 
+		/**
+		 * Instantiates a new demo load thread.
+		 *
+		 * @param swingset the swingset
+		 */
 		public DemoLoadThread(SwingSet2 swingset) {
 			this.swingset = swingset;
 		}
 
+		/* (non-Javadoc)
+		 * @see java.lang.Thread#run()
+		 */
 		public void run() {
 			swingset.loadDemos();
 		}
 	}
 
+	/**
+	 * The Class AboutPanel.
+	 */
 	class AboutPanel extends JPanel {
+		
+		/** The aboutimage. */
 		ImageIcon aboutimage = null;
+		
+		/** The swingset. */
 		SwingSet2 swingset = null;
 
+		/**
+		 * Instantiates a new about panel.
+		 *
+		 * @param swingset the swingset
+		 */
 		public AboutPanel(SwingSet2 swingset) {
 			this.swingset = swingset;
 			aboutimage = swingset.createImageIcon("About.jpg", "AboutBox.accessible_description");
 			setOpaque(false);
 		}
 
+		/* (non-Javadoc)
+		 * @see javax.swing.JComponent#paint(java.awt.Graphics)
+		 */
 		public void paint(Graphics g) {
 			aboutimage.paintIcon(this, g, 0, 0);
 			super.paint(g);
 		}
 
+		/* (non-Javadoc)
+		 * @see javax.swing.JComponent#getPreferredSize()
+		 */
 		public Dimension getPreferredSize() {
 			return new Dimension(aboutimage.getIconWidth(),
 					aboutimage.getIconHeight());
@@ -1451,16 +1917,32 @@ public class SwingSet2 extends JPanel {
 	}
 
 
+	/**
+	 * The Class ChangeFontAction.
+	 */
 	private class ChangeFontAction extends AbstractAction {
+		
+		/** The swingset. */
 		private SwingSet2 swingset;
+		
+		/** The plain. */
 		private boolean plain;
 
+		/**
+		 * Instantiates a new change font action.
+		 *
+		 * @param swingset the swingset
+		 * @param plain the plain
+		 */
 		ChangeFontAction(SwingSet2 swingset, boolean plain) {
 			super("FontMenu");
 			this.swingset = swingset;
 			this.plain = plain;
 		}
 
+		/* (non-Javadoc)
+		 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+		 */
 		public void actionPerformed(ActionEvent e) {
 			//* Jack Jiang 于2012-09-11日注释掉
 //			if (plain) {
@@ -1477,11 +1959,21 @@ public class SwingSet2 extends JPanel {
 	//------------------------------------------------------------- 由jb2011于2012-06-20实现
 	//用于DemoPanel的边框实现，视觉目标是：简洁。
 	//原EtchedBorder边框太土，但是没边框将导致整体效果稍显单调，所以做此边框
+	/**
+	 * The Class DemoPanelBorder.
+	 */
 	private class DemoPanelBorder extends AbstractBorder
 	{
+		
+		/**
+		 * Instantiates a new demo panel border.
+		 */
 		public DemoPanelBorder() {
 		}
 
+		/* (non-Javadoc)
+		 * @see javax.swing.border.AbstractBorder#paintBorder(java.awt.Component, java.awt.Graphics, int, int, int, int)
+		 */
 		public void paintBorder(Component c, Graphics g, int x, int y, 
 				int width, int height) 
 		{
@@ -1507,10 +1999,16 @@ public class SwingSet2 extends JPanel {
 		}
 
 		//border只有底边，且高度为2像素
+		/* (non-Javadoc)
+		 * @see javax.swing.border.AbstractBorder#getBorderInsets(java.awt.Component)
+		 */
 		public Insets getBorderInsets(Component c) {
 			return new Insets(0,0,2,0);
 		}
 
+		/* (non-Javadoc)
+		 * @see javax.swing.border.AbstractBorder#getBorderInsets(java.awt.Component, java.awt.Insets)
+		 */
 		public Insets getBorderInsets(Component c, Insets insets) {
 //			insets.top = insets.left = insets.bottom = insets.right = 1;
 			return getBorderInsets(c);//insets;

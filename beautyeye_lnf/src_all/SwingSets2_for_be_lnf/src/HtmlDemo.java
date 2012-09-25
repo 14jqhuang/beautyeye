@@ -52,30 +52,39 @@ import javax.swing.event.HyperlinkListener;
 import javax.swing.text.html.HTMLDocument;
 import javax.swing.text.html.HTMLFrameHyperlinkEvent;
 
+// TODO: Auto-generated Javadoc
 /**
- * Html Demo
+ * Html Demo.
  *
  * @version 1.12 05/11/17
  * @author Jeff Dinkins
  */
 public class HtmlDemo extends DemoModule {
 
+    /** The html. */
     JEditorPane html;
     
     /**
      * main method allows us to run as a standalone demo.
+     *
+     * @param args the arguments
      */
     public static void main(String[] args) {
 	HtmlDemo demo = new HtmlDemo(null);
 	demo.mainImpl();
     }
     
+    /* (non-Javadoc)
+     * @see DemoModule#getName()
+     */
     @Override public String getName() {
     	return "HTML";
     };
     
     /**
-     * HtmlDemo Constructor
+     * HtmlDemo Constructor.
+     *
+     * @param swingset the swingset
      */
     public HtmlDemo(SwingSet2 swingset) {
         // Set the title for this demo, and an icon used to represent this
@@ -113,6 +122,11 @@ public class HtmlDemo extends DemoModule {
         }
     }
 
+    /**
+     * Creates the hyper link listener.
+     *
+     * @return the hyperlink listener
+     */
     public HyperlinkListener createHyperLinkListener() {
 	return new HyperlinkListener() {
 	    public void hyperlinkUpdate(HyperlinkEvent e) {
@@ -132,6 +146,9 @@ public class HtmlDemo extends DemoModule {
 	};
     }
     
+    /* (non-Javadoc)
+     * @see DemoModule#updateDragEnabled(boolean)
+     */
     void updateDragEnabled(boolean dragEnabled) {
         html.setDragEnabled(dragEnabled);
     }
