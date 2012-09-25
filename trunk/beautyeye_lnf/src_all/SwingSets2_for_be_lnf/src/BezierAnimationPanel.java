@@ -56,8 +56,9 @@ import java.awt.image.BufferedImage;
 
 import javax.swing.JPanel;
 
+// TODO: Auto-generated Javadoc
 /**
- * BezierAnimationPanel
+ * BezierAnimationPanel.
  *
  * @version 1.16 11/17/05
  * @author Jim Graham
@@ -65,21 +66,34 @@ import javax.swing.JPanel;
  */
 class BezierAnimationPanel extends JPanel implements Runnable {
     
+    /** The background color. */
     Color backgroundColor =  new Color(0,     0, 153);
+    
+    /** The outer color. */
     Color outerColor      =  new Color(255, 255, 255);
+    
+    /** The gradient color a. */
     Color gradientColorA  =  new Color(255,   0, 101);
+    
+    /** The gradient color b. */
     Color gradientColorB  =  new Color(255, 255,   0);
 
+    /** The bg changed. */
     boolean bgChanged = false;
 
+    /** The gradient. */
     GradientPaint gradient = null;
     
+    /** The NUMPTS. */
     public final int NUMPTS = 6;
 
+    /** The animpts. */
     float animpts[] = new float[NUMPTS * 2];
 
+    /** The deltas. */
     float deltas[] = new float[NUMPTS * 2];
 
+    /** The staticpts. */
     float staticpts[] = {
 	 50.0f,   0.0f,
 	150.0f,   0.0f,
@@ -89,18 +103,23 @@ class BezierAnimationPanel extends JPanel implements Runnable {
 	  0.0f,  75.0f,
     };
 
+    /** The movepts. */
     float movepts[] = new float[staticpts.length];
 
+    /** The img. */
     BufferedImage img;
 
+    /** The bounds. */
     Rectangle bounds = null;
 
+    /** The anim. */
     Thread anim;
     
+    /** The lock. */
     private final Object lock = new Object();
 
     /**
-     * BezierAnimationPanel Constructor
+     * BezierAnimationPanel Constructor.
      */
     public BezierAnimationPanel() {
         addHierarchyListener(
@@ -117,44 +136,87 @@ class BezierAnimationPanel extends JPanel implements Runnable {
 	setBackground(getBackgroundColor());
     }
 
+    /* (non-Javadoc)
+     * @see javax.swing.JComponent#isOpaque()
+     */
     public boolean isOpaque() {
         return true;
     }
 
+    /**
+     * Gets the gradient color a.
+     *
+     * @return the gradient color a
+     */
     public Color getGradientColorA() {
 	return gradientColorA;
     }
 
+    /**
+     * Sets the gradient color a.
+     *
+     * @param c the new gradient color a
+     */
     public void setGradientColorA(Color c) {
 	if(c != null) {
 	    gradientColorA = c;
 	}
     }
 
+    /**
+     * Gets the gradient color b.
+     *
+     * @return the gradient color b
+     */
     public Color getGradientColorB() {
 	return gradientColorB;
     }
 
+    /**
+     * Sets the gradient color b.
+     *
+     * @param c the new gradient color b
+     */
     public void setGradientColorB(Color c) {
 	if(c != null) {
 	    gradientColorB = c;
 	}
     }
 
+    /**
+     * Gets the outer color.
+     *
+     * @return the outer color
+     */
     public Color getOuterColor() {
 	return outerColor;
     }
 
+    /**
+     * Sets the outer color.
+     *
+     * @param c the new outer color
+     */
     public void setOuterColor(Color c) {
 	if(c != null) {
 	    outerColor = c;
 	}
     }
 
+    /**
+     * Gets the background color.
+     *
+     * @return the background color
+     */
     public Color getBackgroundColor() {
 	return backgroundColor;
     }
 
+    /**
+     * Sets the background color.
+     *
+     * @param c the new background color
+     */
     public void setBackgroundColor(Color c) {
 	if(c != null) {
 	    backgroundColor = c;
@@ -163,6 +225,9 @@ class BezierAnimationPanel extends JPanel implements Runnable {
 	}
     }
 
+    /**
+     * Start.
+     */
     public void start() {
 	Dimension size = getSize();
 	for (int i = 0; i < animpts.length; i += 2) {
@@ -182,11 +247,22 @@ class BezierAnimationPanel extends JPanel implements Runnable {
 	anim.start();
     }
 
+    /**
+     * Stop.
+     */
     public synchronized void stop() {
 	anim = null;
 	notify();
     }
 
+    /**
+     * Animate.
+     *
+     * @param pts the pts
+     * @param deltas the deltas
+     * @param index the index
+     * @param limit the limit
+     */
     public void animate(float[] pts, float[] deltas, int index, int limit) {
 	float newpt = pts[index] + deltas[index];
 	if (newpt <= 0) {
@@ -199,6 +275,9 @@ class BezierAnimationPanel extends JPanel implements Runnable {
 	pts[index] = newpt;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Runnable#run()
+     */
     public void run() {
 	Thread me = Thread.currentThread();
 	while (getSize().width <= 0) {
@@ -331,6 +410,9 @@ class BezierAnimationPanel extends JPanel implements Runnable {
 	}
     }
 
+    /* (non-Javadoc)
+     * @see javax.swing.JComponent#paint(java.awt.Graphics)
+     */
     public void paint(Graphics g) {
 	synchronized (lock) {
 	   Graphics2D g2d = (Graphics2D) g;

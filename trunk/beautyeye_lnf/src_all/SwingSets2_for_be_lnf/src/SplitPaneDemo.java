@@ -60,8 +60,9 @@ import javax.swing.JTextField;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+// TODO: Auto-generated Javadoc
 /**
- * Split Pane demo
+ * Split Pane demo.
  *
  * @version 1.12 11/17/05
  * @author Scott Violet
@@ -69,28 +70,45 @@ import javax.swing.event.ChangeListener;
  */
 public class SplitPaneDemo extends DemoModule {
 
+    /** The split pane. */
     JSplitPane splitPane = null;
+    
+    /** The earth. */
     JLabel earth = null;
+    
+    /** The moon. */
     JLabel moon = null;
     
+    /** The div size. */
     JTextField divSize;
+    
+    /** The earth size. */
     JTextField earthSize;
+    
+    /** The moon size. */
     JTextField moonSize;
     
     /**
      * main method allows us to run as a standalone demo.
+     *
+     * @param args the arguments
      */
     public static void main(String[] args) {
 	SplitPaneDemo demo = new SplitPaneDemo(null);
 	demo.mainImpl();
     }
     
+    /* (non-Javadoc)
+     * @see DemoModule#getName()
+     */
     @Override public String getName() {
     	return "SplitPane";
     };
     
     /**
-     * SplitPaneDemo Constructor
+     * SplitPaneDemo Constructor.
+     *
+     * @param swingset the swingset
      */
     public SplitPaneDemo(SwingSet2 swingset) {
 	super(swingset, "SplitPaneDemo"
@@ -120,6 +138,8 @@ public class SplitPaneDemo extends DemoModule {
     
     /**
      * Creates controls to alter the JSplitPane.
+     *
+     * @return the j panel
      */
     protected JPanel createSplitPaneControls() {
         JPanel wrapper = new JPanel();
@@ -289,6 +309,9 @@ public class SplitPaneDemo extends DemoModule {
 	return wrapper;
     }
     
+    /* (non-Javadoc)
+     * @see DemoModule#updateDragEnabled(boolean)
+     */
     void updateDragEnabled(boolean dragEnabled) {
         divSize.setDragEnabled(dragEnabled);
         earthSize.setDragEnabled(dragEnabled);

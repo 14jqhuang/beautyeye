@@ -49,8 +49,9 @@ import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+// TODO: Auto-generated Javadoc
 /**
- * ToolTip Demo
+ * ToolTip Demo.
  *
  * @version 1.9 11/17/05
  * @author Jeff Dinkins
@@ -59,18 +60,25 @@ public class ToolTipDemo extends DemoModule {
 
     /**
      * main method allows us to run as a standalone demo.
+     *
+     * @param args the arguments
      */
     public static void main(String[] args) {
 	ToolTipDemo demo = new ToolTipDemo(null);
 	demo.mainImpl();
     }
     
+    /* (non-Javadoc)
+     * @see DemoModule#getName()
+     */
     @Override public String getName() {
     	return "ÌבÊ¾";
     };
 
     /**
-     * ToolTipDemo Constructor
+     * ToolTipDemo Constructor.
+     *
+     * @param swingset the swingset
      */
     public ToolTipDemo(SwingSet2 swingset) {
 	// Set the title for this demo, and an icon used to represent this
@@ -97,9 +105,17 @@ public class ToolTipDemo extends DemoModule {
     }
 
 
+    /**
+     * The Class Cow.
+     */
     class Cow extends JLabel {
+	
+	/** The cowgon. */
 	Polygon cowgon = new Polygon();
 	
+	/**
+	 * Instantiates a new cow.
+	 */
 	public Cow() {
 	    super(createImageIcon("tooltip/cow.gif", getString("ToolTipDemo.bessie")));
 	    setAlignmentX(CENTER_ALIGNMENT);
@@ -120,12 +136,20 @@ public class ToolTipDemo extends DemoModule {
 	    cowgon.addPoint(30,35);   cowgon.addPoint(15,36);
 	}
 	
+	/** The moo. */
 	boolean moo = false;
+	
+	/** The milk. */
 	boolean milk = false;
+	
+	/** The tail. */
 	boolean tail = false;
 
 	// Use the contains method to set the tooltip text depending
 	// on where the mouse is over the cow.
+	/* (non-Javadoc)
+	 * @see javax.swing.JComponent#contains(int, int)
+	 */
 	public boolean contains(int x, int y) {
 	    if(!cowgon.contains(new Point(x, y))) {
 		return false;

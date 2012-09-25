@@ -1,3 +1,4 @@
+// TODO: Auto-generated Javadoc
 /*
  * @(#)Permuter.java	1.9 05/11/17
  * 
@@ -65,6 +66,11 @@ class Permuter {
      */
     private int addend = 22;
 
+    /**
+     * Instantiates a new permuter.
+     *
+     * @param n the n
+     */
     public Permuter(int n) {
         if (n<0) {
             throw new IllegalArgumentException();
@@ -87,6 +93,9 @@ class Permuter {
      * Returns the integer to which this permuter maps the specified integer.
      * The specified integer must be between 0 and n-1, and the returned
      * integer will be as well.
+     *
+     * @param i the i
+     * @return the int
      */
     public int map(int i) {
         return (multiplier * i + addend) % modulus;
@@ -94,6 +103,10 @@ class Permuter {
 
     /**
      * Calculate GCD of a and b, which are assumed to be non-negative.
+     *
+     * @param a the a
+     * @param b the b
+     * @return the int
      */
     private static int gcd(int a, int b) {
         while(b != 0) {
@@ -106,6 +119,8 @@ class Permuter {
 
     /**
      * Simple test.  Takes modulus on command line and prints out permutation.
+     *
+     * @param args the arguments
      */
     public static void main(String[] args) {
         int modulus = Integer.parseInt(args[0]);

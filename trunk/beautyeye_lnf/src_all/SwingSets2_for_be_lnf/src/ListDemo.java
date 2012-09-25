@@ -67,6 +67,7 @@ import javax.swing.JScrollPane;
 
 import org.jb2011.lnf.beautyeye.widget.N9ComponentFactory;
 
+// TODO: Auto-generated Javadoc
 /**
  * List Demo. This demo shows that it is not
  * always necessary to have an array of objects
@@ -80,32 +81,49 @@ import org.jb2011.lnf.beautyeye.widget.N9ComponentFactory;
  * @author Jeff Dinkins
  */
 public class ListDemo extends DemoModule {
+    
+    /** The list. */
     JList list;
 
+    /** The prefix list. */
     JPanel prefixList;
+    
+    /** The suffix list. */
     JPanel suffixList;
 
+    /** The prefix action. */
     Action prefixAction;
+    
+    /** The suffix action. */
     Action suffixAction;
 
+    /** The list model. */
     GeneratedListModel listModel;
 
+    /** The checkboxes. */
     Vector checkboxes = new Vector();
 
     /**
      * main method allows us to run as a standalone demo.
+     *
+     * @param args the arguments
      */
     public static void main(String[] args) {
 	ListDemo demo = new ListDemo(null);
 	demo.mainImpl();
     }
     
+    /* (non-Javadoc)
+     * @see DemoModule#getName()
+     */
     @Override public String getName() {
     	return "ап╠М";
     };
 
     /**
-     * ListDemo Constructor
+     * ListDemo Constructor.
+     *
+     * @param swingset the swingset
      */
     public ListDemo(SwingSet2 swingset) {
 	super(swingset, "ListDemo"
@@ -201,10 +219,18 @@ public class ListDemo extends DemoModule {
 	addSuffix("Concepts", false);
     }
 
+    /* (non-Javadoc)
+     * @see DemoModule#updateDragEnabled(boolean)
+     */
     void updateDragEnabled(boolean dragEnabled) {
         list.setDragEnabled(dragEnabled);
     }
 
+    /**
+     * Creates the control panel.
+     *
+     * @return the j panel
+     */
     public JPanel createControlPanel() {
 	JPanel controlPanel = new JPanel() {
 	    Insets insets = new Insets(0, 4, 10, 10);
@@ -263,6 +289,7 @@ public class ListDemo extends DemoModule {
 	return controlPanel;
     }
     
+    /** The list focus listener. */
     private FocusListener listFocusListener = new FocusAdapter() { 
         public void focusGained(FocusEvent e) {
             JComponent c = (JComponent)e.getComponent();
@@ -270,6 +297,12 @@ public class ListDemo extends DemoModule {
         }
     };
 
+    /**
+     * Adds the prefix.
+     *
+     * @param prefix the prefix
+     * @param selected the selected
+     */
     public void addPrefix(String prefix, boolean selected) {
 	if(prefixAction == null) {
 	    prefixAction = new UpdatePrefixListAction(listModel);
@@ -285,6 +318,12 @@ public class ListDemo extends DemoModule {
         cb.addFocusListener(listFocusListener);
     }
 
+    /**
+     * Adds the suffix.
+     *
+     * @param suffix the suffix
+     * @param selected the selected
+     */
     public void addSuffix(String suffix, boolean selected) {
 	if(suffixAction == null) {
 	    suffixAction = new UpdateSuffixListAction(listModel);
@@ -300,12 +339,26 @@ public class ListDemo extends DemoModule {
         cb.addFocusListener(listFocusListener);
     }
 
+    /**
+     * The Class UpdatePrefixListAction.
+     */
     class UpdatePrefixListAction extends AbstractAction {
+	
+	/** The list model. */
 	GeneratedListModel listModel;
+        
+        /**
+         * Instantiates a new update prefix list action.
+         *
+         * @param listModel the list model
+         */
         protected UpdatePrefixListAction(GeneratedListModel listModel) {
 	    this.listModel = listModel;
         }
 	
+        /* (non-Javadoc)
+         * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+         */
         public void actionPerformed(ActionEvent e) {
 	    JCheckBox cb = (JCheckBox) e.getSource();
 	    if(cb.isSelected()) {
@@ -316,12 +369,26 @@ public class ListDemo extends DemoModule {
 	}
     }
 
+    /**
+     * The Class UpdateSuffixListAction.
+     */
     class UpdateSuffixListAction extends AbstractAction {
+	
+	/** The list model. */
 	GeneratedListModel listModel;
+        
+        /**
+         * Instantiates a new update suffix list action.
+         *
+         * @param listModel the list model
+         */
         protected UpdateSuffixListAction(GeneratedListModel listModel) {
 	    this.listModel = listModel;
         }
 	
+        /* (non-Javadoc)
+         * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+         */
         public void actionPerformed(ActionEvent e) {
 	    JCheckBox cb = (JCheckBox) e.getSource();
 	    if(cb.isSelected()) {
@@ -333,22 +400,45 @@ public class ListDemo extends DemoModule {
     }
 
     
+    /**
+     * The Class GeneratedListModel.
+     */
     class GeneratedListModel extends AbstractListModel {
+	
+	/** The demo. */
 	ListDemo demo;
+	
+	/** The permuter. */
 	Permuter permuter;
 
+	/** The prefix. */
 	public Vector prefix = new Vector();
+	
+	/** The suffix. */
 	public Vector suffix = new Vector();
 
+	/**
+	 * Instantiates a new generated list model.
+	 *
+	 * @param demo the demo
+	 */
 	public GeneratedListModel (ListDemo demo) {
 	    this.demo = demo;
 	}
 
+	/**
+	 * Update.
+	 */
 	private void update() {
 	    permuter = new Permuter(getSize());
 	    fireContentsChanged(this, 0, getSize());
 	}
 
+	/**
+	 * Adds the prefix.
+	 *
+	 * @param s the s
+	 */
 	public void addPrefix(String s) {
 	    if(!prefix.contains(s)) {
 		prefix.addElement(s);
@@ -356,11 +446,21 @@ public class ListDemo extends DemoModule {
 	    }
 	}
 
+	/**
+	 * Removes the prefix.
+	 *
+	 * @param s the s
+	 */
 	public void removePrefix(String s) {
 	    prefix.removeElement(s);
 	    update();
 	}
 
+	/**
+	 * Adds the suffix.
+	 *
+	 * @param s the s
+	 */
 	public void addSuffix(String s) {
 	    if(!suffix.contains(s)) {
 		suffix.addElement(s);
@@ -368,15 +468,26 @@ public class ListDemo extends DemoModule {
 	    }
 	}
 
+	/**
+	 * Removes the suffix.
+	 *
+	 * @param s the s
+	 */
 	public void removeSuffix(String s) {
 	    suffix.removeElement(s);
 	    update();
 	}
 
+	/* (non-Javadoc)
+	 * @see javax.swing.ListModel#getSize()
+	 */
 	public int getSize() {
 	    return prefix.size() * suffix.size();
 	}
 
+	/* (non-Javadoc)
+	 * @see javax.swing.ListModel#getElementAt(int)
+	 */
 	public Object getElementAt(int index) {
 	    if(permuter == null) {
 		update();
@@ -390,7 +501,12 @@ public class ListDemo extends DemoModule {
 	}
     }
 
+    /** The images. */
     ImageIcon images[] = new ImageIcon[7];
+    
+    /**
+     * Load images.
+     */
     void loadImages() {
 	    images[0] = createImageIcon("list/red.gif",  getString("ListDemo.red"));
 	    images[1] = createImageIcon("list/blue.gif",  getString("ListDemo.blue"));

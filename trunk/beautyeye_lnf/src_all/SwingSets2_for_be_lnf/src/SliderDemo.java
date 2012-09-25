@@ -59,8 +59,9 @@ import javax.swing.event.ChangeListener;
 
 import org.jb2011.lnf.beautyeye.widget.N9ComponentFactory;
 
+// TODO: Auto-generated Javadoc
 /**
- * JSlider Demo
+ * JSlider Demo.
  *
  * @version 1.9 11/17/05
  * @author Dave Kloba
@@ -70,18 +71,25 @@ public class SliderDemo extends DemoModule {
 
     /**
      * main method allows us to run as a standalone demo.
+     *
+     * @param args the arguments
      */
     public static void main(String[] args) {
 	SliderDemo demo = new SliderDemo(null);
 	demo.mainImpl();
     }
     
+    /* (non-Javadoc)
+     * @see DemoModule#getName()
+     */
     @Override public String getName() {
     	return "Slider";
     };
 
     /**
-     * SliderDemo Constructor
+     * SliderDemo Constructor.
+     *
+     * @param swingset the swingset
      */
     public SliderDemo(SwingSet2 swingset) {
 	// Set the title for this demo, and an icon used to represent this
@@ -92,6 +100,9 @@ public class SliderDemo extends DemoModule {
 	createSliderDemo();
     }
 
+    /**
+     * Creates the slider demo.
+     */
     public void createSliderDemo() {
         JSlider s;
 	JPanel hp;
@@ -306,11 +317,34 @@ public class SliderDemo extends DemoModule {
 	vp.add(p);
     }
 
+    /**
+     * The listener interface for receiving slider events.
+     * The class that is interested in processing a slider
+     * event implements this interface, and the object created
+     * with that class is registered with a component using the
+     * component's <code>addSliderListener<code> method. When
+     * the slider event occurs, that object's appropriate
+     * method is invoked.
+     *
+     * @see SliderEvent
+     */
     class SliderListener implements ChangeListener {
+	
+	/** The tf. */
 	JLabel tf;
+	
+	/**
+	 * Instantiates a new slider listener.
+	 *
+	 * @param f the f
+	 */
 	public SliderListener(JLabel f) {
 	    tf = f;
 	}
+	
+	/* (non-Javadoc)
+	 * @see javax.swing.event.ChangeListener#stateChanged(javax.swing.event.ChangeEvent)
+	 */
 	public void stateChanged(ChangeEvent e) {
 	    JSlider s1 = (JSlider)e.getSource();
 	    tf.setText(getString("SliderDemo.slidervalue") + s1.getValue());
@@ -318,6 +352,13 @@ public class SliderDemo extends DemoModule {
     }
     
     //add by jb2011 START
+    /**
+     * Creates the horizonal hint box.
+     *
+     * @param parent the parent
+     * @param c the c
+     * @param txt the txt
+     */
     public static void createHorizonalHintBox(JPanel parent,JComponent c, String txt)
     {
     	parent.setAlignmentX(Component.LEFT_ALIGNMENT);
@@ -328,6 +369,14 @@ public class SliderDemo extends DemoModule {
     	l1.setAlignmentX(Component.LEFT_ALIGNMENT);
     	parent.add(l1);
     }
+    
+    /**
+     * Creates the vertical hint box.
+     *
+     * @param c the c
+     * @param txt the txt
+     * @return the j panel
+     */
     public static JPanel createVerticalHintBox(JComponent c, String txt)
     {
     	JPanel p = new JPanel();

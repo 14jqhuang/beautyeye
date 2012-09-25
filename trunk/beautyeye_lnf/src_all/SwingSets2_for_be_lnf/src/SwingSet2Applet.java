@@ -46,14 +46,19 @@ import javax.swing.JApplet;
 
 import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
 
+// TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class SwingSet2Applet.
  *
  * @version 1.10 11/17/05
  * @author Jeff Dinkins
  */
 
 public class SwingSet2Applet extends JApplet {
+    
+    /* (non-Javadoc)
+     * @see java.applet.Applet#init()
+     */
     public void init() {
     	try
 		{
@@ -68,6 +73,12 @@ public class SwingSet2Applet extends JApplet {
         getContentPane().add(new SwingSet2(this), BorderLayout.CENTER);
     }
 
+    /**
+     * Gets the uRL.
+     *
+     * @param filename the filename
+     * @return the uRL
+     */
     public URL getURL(String filename) {
         URL codeBase = this.getCodeBase();
         URL url = null;

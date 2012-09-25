@@ -48,8 +48,9 @@ import javax.swing.JPanel;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 
+// TODO: Auto-generated Javadoc
 /**
- * Scroll Pane Demo
+ * Scroll Pane Demo.
  *
  * @version 1.9 11/17/05
  * @author Jeff Dinkins
@@ -58,18 +59,25 @@ public class ScrollPaneDemo extends DemoModule {
 
     /**
      * main method allows us to run as a standalone demo.
+     *
+     * @param args the arguments
      */
     public static void main(String[] args) {
 	ScrollPaneDemo demo = new ScrollPaneDemo(null);
 	demo.mainImpl();
     }
     
+    /* (non-Javadoc)
+     * @see DemoModule#getName()
+     */
     @Override public String getName() {
     	return "¹ö¶¯Ãæ°å";
     };
 
     /**
-     * ScrollPaneDemo Constructor
+     * ScrollPaneDemo Constructor.
+     *
+     * @param swingset the swingset
      */
     public ScrollPaneDemo(SwingSet2 swingset) {
 	super(swingset, "ScrollPaneDemo"
@@ -85,6 +93,13 @@ public class ScrollPaneDemo extends DemoModule {
      * and corners.
      */
     class ImageScroller extends JScrollPane {
+	
+	/**
+	 * Instantiates a new image scroller.
+	 *
+	 * @param demo the demo
+	 * @param icon the icon
+	 */
 	public ImageScroller(ScrollPaneDemo demo, Icon icon) {
 	    super();
 

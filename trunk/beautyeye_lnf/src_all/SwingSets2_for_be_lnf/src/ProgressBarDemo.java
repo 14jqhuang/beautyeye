@@ -52,29 +52,37 @@ import javax.swing.JProgressBar;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
+// TODO: Auto-generated Javadoc
 /**
- * JProgressBar Demo
+ * JProgressBar Demo.
  *
  * @version 1.12 11/17/05
  * @author Jeff Dinkins
- # @author Peter Korn (accessibility support)
+ * # @author Peter Korn (accessibility support)
  */
 public class ProgressBarDemo extends DemoModule {
 
     /**
      * main method allows us to run as a standalone demo.
+     *
+     * @param args the arguments
      */
     public static void main(String[] args) {
 	ProgressBarDemo demo = new ProgressBarDemo(null);
 	demo.mainImpl();
     }
     
+    /* (non-Javadoc)
+     * @see DemoModule#getName()
+     */
     @Override public String getName() {
     	return "½ø¶ÈÌõ";
     };
 
     /**
-     * ProgressBarDemo Constructor
+     * ProgressBarDemo Constructor.
+     *
+     * @param swingset the swingset
      */
     public ProgressBarDemo(SwingSet2 swingset) {
 	// Set the title for this demo, and an icon used to represent this
@@ -85,16 +93,31 @@ public class ProgressBarDemo extends DemoModule {
 		createProgressPanel();
     }
 
+    /** The timer. */
     javax.swing.Timer timer = new javax.swing.Timer(18, createTextLoadAction());
+    
+    /** The load action. */
     Action loadAction;
+    
+    /** The stop action. */
     Action stopAction;
+    
+    /** The progress bar. */
     JProgressBar progressBar;
+    
+    /** The progress text area. */
     JTextArea progressTextArea;
 
+    /* (non-Javadoc)
+     * @see DemoModule#updateDragEnabled(boolean)
+     */
     void updateDragEnabled(boolean dragEnabled) {
         progressTextArea.setDragEnabled(dragEnabled);
     }
     
+    /**
+     * Creates the progress panel.
+     */
     public void createProgressPanel() {
 	getDemoPanel().setLayout(new BorderLayout());
 
@@ -152,6 +175,11 @@ public class ProgressBarDemo extends DemoModule {
 
     }
 
+    /**
+     * Creates the load button.
+     *
+     * @return the j button
+     */
     public JButton createLoadButton() {
 	loadAction = new AbstractAction(getString("ProgressBarDemo.start_button")) {
 	    public void actionPerformed(ActionEvent e) {
@@ -168,6 +196,11 @@ public class ProgressBarDemo extends DemoModule {
 	return createButton(loadAction);
     }
 
+    /**
+     * Creates the stop button.
+     *
+     * @return the j button
+     */
     public JButton createStopButton() {
 	stopAction = new AbstractAction(getString("ProgressBarDemo.stop_button")) {
 	    public void actionPerformed(ActionEvent e) {
@@ -179,6 +212,12 @@ public class ProgressBarDemo extends DemoModule {
 	return createButton(stopAction);
     }
 
+    /**
+     * Creates the button.
+     *
+     * @param a the a
+     * @return the j button
+     */
     public JButton createButton(Action a) {
 	JButton b = new JButton();
 	// setting the following client property informs the button to show
@@ -190,10 +229,17 @@ public class ProgressBarDemo extends DemoModule {
     }
 
 
+    /** The text location. */
     int textLocation = 0;
 
+    /** The text. */
     String text = getString("ProgressBarDemo.text");
 
+    /**
+     * Creates the text load action.
+     *
+     * @return the action
+     */
     public Action createTextLoadAction() {
 	return new AbstractAction("text load action") {
 	    public void actionPerformed (ActionEvent e) {
@@ -211,17 +257,30 @@ public class ProgressBarDemo extends DemoModule {
     }
 
 
+    /**
+     * The Class MyTextArea.
+     */
     class MyTextArea extends JTextArea {
+        
+        /**
+         * Instantiates a new my text area.
+         */
         public MyTextArea() {
             super(null, 0, 0);
 //	    setEditable(false);
 	    setText("");
         }
 
+        /* (non-Javadoc)
+         * @see javax.swing.JComponent#getAlignmentX()
+         */
         public float getAlignmentX () {
             return LEFT_ALIGNMENT;
         }
  
+        /* (non-Javadoc)
+         * @see javax.swing.JComponent#getAlignmentY()
+         */
         public float getAlignmentY () {
             return TOP_ALIGNMENT;
         }

@@ -59,39 +59,57 @@ import javax.swing.JPanel;
 
 import org.jb2011.lnf.beautyeye.widget.N9ComponentFactory;
 
+// TODO: Auto-generated Javadoc
 /**
- * JComboBox Demo
+ * JComboBox Demo.
  *
  * @version 1.13 11/17/05
  * @author Jeff Dinkins
  */
 public class ComboBoxDemo extends DemoModule implements ActionListener {
 
+	/** The face. */
 	Face face;
+	
+	/** The face label. */
 	JLabel faceLabel;
 
+	/** The hair cb. */
 	JComboBox hairCB;
+	
+	/** The eyes cb. */
 	JComboBox eyesCB;
+	
+	/** The mouth cb. */
 	JComboBox mouthCB;
 
+	/** The preset cb. */
 	JComboBox presetCB;
 
+	/** The parts. */
 	Hashtable parts = new Hashtable();
 
 	/**
 	 * main method allows us to run as a standalone demo.
+	 *
+	 * @param args the arguments
 	 */
 	public static void main(String[] args) {
 		ComboBoxDemo demo = new ComboBoxDemo(null);
 		demo.mainImpl();
 	}
 
+	/* (non-Javadoc)
+	 * @see DemoModule#getName()
+	 */
 	@Override public String getName() {
 		return "ÏÂÀ­¿ò";
 	};
 
 	/**
-	 * ComboBoxDemo Constructor
+	 * ComboBoxDemo Constructor.
+	 *
+	 * @param swingset the swingset
 	 */
 	public ComboBoxDemo(SwingSet2 swingset) {
 		// Set the title for this demo, and an icon used to represent this
@@ -102,6 +120,9 @@ public class ComboBoxDemo extends DemoModule implements ActionListener {
 		createComboBoxDemo();
 	}
 
+	/**
+	 * Creates the combo box demo.
+	 */
 	public void createComboBoxDemo() {
 		JPanel demo = getDemoPanel();
 
@@ -214,6 +235,12 @@ public class ComboBoxDemo extends DemoModule implements ActionListener {
 		presetCB.setSelectedIndex(0);
 	}
 
+	/**
+	 * Adds the face.
+	 *
+	 * @param name the name
+	 * @param i18n_name the i18n_name
+	 */
 	void addFace(String name, String i18n_name) {
 		ImageIcon i;
 		String i18n_hair = getString("ComboBoxDemo.hair");
@@ -233,10 +260,20 @@ public class ComboBoxDemo extends DemoModule implements ActionListener {
 		parts.put(name +  "mouth", i);
 	}
 
+	/**
+	 * Gets the face.
+	 *
+	 * @return the face
+	 */
 	Face getFace() {
 		return face;
 	}
 
+	/**
+	 * Creates the hair combo box.
+	 *
+	 * @return the j combo box
+	 */
 	JComboBox createHairComboBox() {
 		JComboBox cb = new JComboBox();
 		fillComboBox(cb);
@@ -244,6 +281,11 @@ public class ComboBoxDemo extends DemoModule implements ActionListener {
 		return cb;
 	} 
 
+	/**
+	 * Creates the eyes combo box.
+	 *
+	 * @return the j combo box
+	 */
 	JComboBox createEyesComboBox() {
 		JComboBox cb = new JComboBox();
 		fillComboBox(cb);
@@ -251,6 +293,11 @@ public class ComboBoxDemo extends DemoModule implements ActionListener {
 		return cb;
 	} 
 
+	/**
+	 * Creates the nose combo box.
+	 *
+	 * @return the j combo box
+	 */
 	JComboBox createNoseComboBox() {
 		JComboBox cb = new JComboBox();
 		fillComboBox(cb);
@@ -258,6 +305,11 @@ public class ComboBoxDemo extends DemoModule implements ActionListener {
 		return cb;
 	}
 
+	/**
+	 * Creates the mouth combo box.
+	 *
+	 * @return the j combo box
+	 */
 	JComboBox createMouthComboBox() {
 		JComboBox cb = new JComboBox();
 		fillComboBox(cb);
@@ -265,6 +317,11 @@ public class ComboBoxDemo extends DemoModule implements ActionListener {
 		return cb;
 	}
 
+	/**
+	 * Creates the preset combo box.
+	 *
+	 * @return the j combo box
+	 */
 	JComboBox createPresetComboBox() {
 		JComboBox cb = new JComboBox();
 		cb.addItem(getString("ComboBoxDemo.preset1"));
@@ -281,6 +338,11 @@ public class ComboBoxDemo extends DemoModule implements ActionListener {
 		return cb;
 	}
 
+	/**
+	 * Fill combo box.
+	 *
+	 * @param cb the cb
+	 */
 	void fillComboBox(JComboBox cb) {
 		cb.addItem(getString("ComboBoxDemo.brent"));
 		cb.addItem(getString("ComboBoxDemo.georges"));
@@ -297,6 +359,9 @@ public class ComboBoxDemo extends DemoModule implements ActionListener {
 		cb.addItem(getString("ComboBoxDemo.scott"));
 	}
 
+	/* (non-Javadoc)
+	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 */
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == hairCB) {
 			String name = (String) parts.get((String) hairCB.getSelectedItem());
@@ -375,23 +440,50 @@ public class ComboBoxDemo extends DemoModule implements ActionListener {
 		}
 	}
 
+	/**
+	 * The Class Face.
+	 */
 	class Face implements Icon {
+		
+		/** The hair. */
 		ImageIcon hair;      
+		
+		/** The eyes. */
 		ImageIcon eyes;      
+		
+		/** The mouth. */
 		ImageIcon mouth;      
 
+		/**
+		 * Sets the hair.
+		 *
+		 * @param i the new hair
+		 */
 		void setHair(ImageIcon i) {
 			hair = i;
 		}
 
+		/**
+		 * Sets the eyes.
+		 *
+		 * @param i the new eyes
+		 */
 		void setEyes(ImageIcon i) {
 			eyes = i;
 		}
 
+		/**
+		 * Sets the mouth.
+		 *
+		 * @param i the new mouth
+		 */
 		void setMouth(ImageIcon i) {
 			mouth = i;
 		}
 
+		/* (non-Javadoc)
+		 * @see javax.swing.Icon#paintIcon(java.awt.Component, java.awt.Graphics, int, int)
+		 */
 		public void paintIcon(Component c, Graphics g, int x, int y) {
 			int height = y;
 			x = c.getWidth()/2 - getIconWidth()/2;
@@ -409,10 +501,16 @@ public class ComboBoxDemo extends DemoModule implements ActionListener {
 			}
 		}
 
+		/* (non-Javadoc)
+		 * @see javax.swing.Icon#getIconWidth()
+		 */
 		public int getIconWidth() {
 			return 344;
 		}
 
+		/* (non-Javadoc)
+		 * @see javax.swing.Icon#getIconHeight()
+		 */
 		public int getIconHeight() {
 			return 455;
 		}
