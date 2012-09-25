@@ -38,4 +38,22 @@ BeautyEye L&F v3.2版更新说明：
 6、JFileChooser中的JComboxBox因使用的自定义renderer导致与be LNF很不搭
 
 
+-------------------------------------------------------------------------------------- v3.3发布于2012-09-25 15:17
+BeautyEye L&F v3.3版更新说明：
+
+【解决的Bug】
+1、【Issue 37】解决某些情况下WindowTranslucencyHelper.setWindowOpaque中w.getBackground()为null导致透明失败的问题
+2、【Issue 38】放置于主面板不同方向上的JToolBar的border得到了优化，修正了NORTH以外方向的border挤的问题
+3、【Issue 39】TabbedPaneUI的选中tab上左边的条灰色竖线（图没弄好！）
+4、【Issue 41】窗口icon与title在垂直方向上有几个像素的偏移
+5、【Issue 44】窗口标题栏的图标点中后的背景绘制的问题
+
+
+【其它优化内容】
+1、【Issue 45】优化了内部窗体的图标	
+2、【Issue 46】优化了窗口最大化按钮图标（优化之前最大化后和正常情况下是同一图标）
+
+
+
+
 
