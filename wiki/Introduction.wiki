@@ -110,7 +110,7 @@ toolbarInstance.putClientProperty("ToolBar.isPaintPlainBackground", Boolean.TRUE
 
 *`@since v3.4`*
 
-*方法1：*
+加入以下代码，使用你自已的border：
 {{{
 //自定义JToolBar ui的border
 Border bd = new org.jb2011.lnf.beautyeye.ch8_toolbar.BEToolBarUI.ToolBarBorder(
@@ -119,6 +119,8 @@ Border bd = new org.jb2011.lnf.beautyeye.ch8_toolbar.BEToolBarUI.ToolBarBorder(
         , new Insets(6, 0, 11, 0));              //border的默认insets
 UIManager.put("ToolBar.border",new BorderUIResource(bd));
 }}}
+
+*说明:* 以上代码必须在“`BeautyEyeLNFHelper.launchBeautyEyeLNF();`”之后执行方能起效哦。
 
 <br>
 ----
