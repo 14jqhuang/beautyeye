@@ -104,7 +104,7 @@ http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/toolbar_bg_p
     toolbarInstance.putClientProperty("ToolBar.isPaintPlainBackground", Boolean.TRUE);
 }}}
 
-*NOTE: 方法2拥有比方法1更高的优化级哦。*
+*说明:* 方法2可以单独控制每一个JToolBar组件，而方法1是全局属性，方法2的优先级高于方法1。
 
 <br>
 ----
