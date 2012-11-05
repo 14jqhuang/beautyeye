@@ -88,7 +88,6 @@ http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/y1.png
 
 *`@since v3.4`*
 
-效果图如下：
 http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/toolbar_bg_paint_contrast.png
 
 *方法1：*
