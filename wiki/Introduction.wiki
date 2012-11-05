@@ -84,11 +84,22 @@ http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/y1.png
     BeautyEyeLNFHelper.translucencyAtFrameInactive = false;
 }}}
 
-=== 附录6：怎么样设JToolBar的ui不使用渐变图片而使用传统的纯色来填充背景？ ===
+=== 附录6：怎样让JToolBar的ui不使用渐变图片而使用传统的纯色来填充背景？ ===
 
 *`@since v3.4`*
+
 效果图如下：
 http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/toolbar_bg_paint_contrast.png
+
+方法1：
+{{{
+    //设置属性即可：true表示使用ToolBar.background颜色实现纯
+    //色填充背景，BeautyEye中此属性默认是false
+    UIManager.put("ToolBar.isPaintPlainBackground", Boolean.TRUE);
+}}}
+
+方法2：
+
 
 <br>
 ----
