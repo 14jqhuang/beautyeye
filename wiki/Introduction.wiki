@@ -91,15 +91,21 @@ http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/y1.png
 效果图如下：
 http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/toolbar_bg_paint_contrast.png
 
-方法1：
+*方法1：*
 {{{
     //设置属性即可：true表示使用ToolBar.background颜色实现纯
     //色填充背景，BeautyEye中此属性默认是false
     UIManager.put("ToolBar.isPaintPlainBackground", Boolean.TRUE);
 }}}
 
-方法2：
+*方法2：*
+{{{
+    //使用ClientProperty单独设置控制每个toolbar：true表示使用ToolBar.background
+    //颜色实现纯色填充背景，BeautyEye中此属性默认是false
+    toolbarInstance.putClientProperty("ToolBar.isPaintPlainBackground", Boolean.TRUE);
+}}}
 
+*NOTE: 方法2拥有比方法1更高的优化级哦。*
 
 <br>
 ----
