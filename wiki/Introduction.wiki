@@ -106,6 +106,19 @@ http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/toolbar_bg_p
 
 *说明:* 方法2可以单独控制每一个JToolBar组件，而方法1是全局属性，方法2的优先级高于方法1。
 
+=== 附录7：如何自定义JToolBar ui的border？ ===
+
+*`@since v3.4`*
+
+*方法1：*
+{{{
+    //自定义JToolBar ui的border
+    UIManager.put("ToolBar.border",new BorderUIResource(
+    	new     org.jb2011.lnf.beautyeye.ch8_toolbar.BEToolBarUI.ToolBarBorder(UIManager.getColor(    "ToolBar.shadow")
+    	, UIManager.getColor("ToolBar.highlight")
+    	, new Insets(6, 0, 11, 0))));
+}}}
+
 <br>
 ----
 
