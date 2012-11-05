@@ -120,7 +120,7 @@ Border bd = new org.jb2011.lnf.beautyeye.ch8_toolbar.BEToolBarUI.ToolBarBorder(
 UIManager.put("ToolBar.border",new BorderUIResource(bd));
 }}}
 
-*说明:* 以上代码必须在“`BeautyEyeLNFHelper.launchBeautyEyeLNF();`”之后执行方能起效哦。
+*说明:* 以上代码必须在 “`BeautyEyeLNFHelper.launchBeautyEyeLNF();`” 之后执行方能起效哦。
 
 <br>
 ----
