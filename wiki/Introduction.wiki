@@ -80,8 +80,8 @@ http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/y1.png
 *`@since v3.2`*
 
 {{{
-    //设置此开关量为false即表示关闭之，BeautyEye LNF中默认是true
-    BeautyEyeLNFHelper.translucencyAtFrameInactive = false;
+//设置此开关量为false即表示关闭之，BeautyEye LNF中默认是true
+BeautyEyeLNFHelper.translucencyAtFrameInactive = false;
 }}}
 
 === 附录6：怎样让JToolBar的ui不使用渐变图片而使用传统的纯色来填充背景？ ===
@@ -92,16 +92,16 @@ http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/toolbar_bg_p
 
 *方法1：*
 {{{
-    //设置属性即可：true表示使用ToolBar.background颜色实现纯
-    //色填充背景，BeautyEye中此属性默认是false
-    UIManager.put("ToolBar.isPaintPlainBackground", Boolean.TRUE);
+//设置属性即可：true表示使用ToolBar.background颜色实现纯
+//色填充背景，BeautyEye中此属性默认是false
+UIManager.put("ToolBar.isPaintPlainBackground", Boolean.TRUE);
 }}}
 
 *方法2：*
 {{{
-    //使用ClientProperty单独设置控制每个toolbar：true表示使用ToolBar.background
-    //颜色实现纯色填充背景，BeautyEye中此属性默认是false
-    toolbarInstance.putClientProperty("ToolBar.isPaintPlainBackground", Boolean.TRUE);
+//使用ClientProperty单独设置控制每个toolbar：true表示使用ToolBar.background
+//颜色实现纯色填充背景，BeautyEye中此属性默认是false
+toolbarInstance.putClientProperty("ToolBar.isPaintPlainBackground", Boolean.TRUE);
 }}}
 
 *说明:* 方法2可以单独控制每一个JToolBar组件，而方法1是全局属性，方法2的优先级高于方法1。
@@ -112,11 +112,12 @@ http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/toolbar_bg_p
 
 *方法1：*
 {{{
-    //自定义JToolBar ui的border
-    UIManager.put("ToolBar.border",new BorderUIResource(
-    	new org.jb2011.lnf.beautyeye.ch8_toolbar.BEToolBarUI.ToolBarBorder(UIManager.getColor("ToolBar.shadow")
-    	, UIManager.getColor("ToolBar.highlight")
-    	, new Insets(6, 0, 11, 0))));
+//自定义JToolBar ui的border
+Border bd = new org.jb2011.lnf.beautyeye.ch8_toolbar.BEToolBarUI.ToolBarBorder(
+        UIManager.getColor("ToolBar.shadow")     //Floatable时触点的颜色
+        , UIManager.getColor("ToolBar.highlight")//Floatable时触点的阴影颜色
+        , new Insets(6, 0, 11, 0));              //border的默认insets
+UIManager.put("ToolBar.border",new BorderUIResource(bd));
 }}}
 
 <br>
