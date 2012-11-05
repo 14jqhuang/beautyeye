@@ -114,7 +114,7 @@ http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/toolbar_bg_p
 {{{
     //自定义JToolBar ui的border
     UIManager.put("ToolBar.border",new BorderUIResource(
-    	new     org.jb2011.lnf.beautyeye.ch8_toolbar.BEToolBarUI.ToolBarBorder(UIManager.getColor(    "ToolBar.shadow")
+    	new org.jb2011.lnf.beautyeye.ch8_toolbar.BEToolBarUI.ToolBarBorder(UIManager.getColor("ToolBar.shadow")
     	, UIManager.getColor("ToolBar.highlight")
     	, new Insets(6, 0, 11, 0))));
 }}}
