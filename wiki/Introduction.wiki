@@ -124,12 +124,14 @@ UIManager.put("ToolBar.border",new BorderUIResource(bd));
 
 === [附录8]：如何设置BeantuEye外观下JTabbedPane的左缩进？ ===
 
-通过改变以下代码中的Insets值即可实现：
+参见以下代码实现：
 {{{
 //改变InsetsUIResource参数的值即可实现
 UIManager.put("TabbedPane.tabAreaInsets"
 	,new javax.swing.plaf.InsetsUIResource(3,20,2,20));
 }}}
+
+*说明:* 以上代码必须在 “`BeautyEyeLNFHelper.launchBeautyEyeLNF();`” 之后执行方能起效哦。
 
 <br>
 ----
