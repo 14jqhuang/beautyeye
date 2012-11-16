@@ -143,8 +143,8 @@ http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/help_about_t
 {{{
 // set frame full transparent
 frame.setUndecorated(true);
-frame.AWTUtilities.setWindowOpaque(this, false);
-frame.this.getRootPane().setWindowDecorationStyle(JRootPane.NONE);
+AWTUtilities.setWindowOpaque(frame, false);
+frame.getRootPane().setWindowDecorationStyle(JRootPane.NONE);
 }}}
 
 *说明:* 以上代码适用于所有处于非系统窗体标题栏的情况，包括官方MetalLookAndFeel外观等。
