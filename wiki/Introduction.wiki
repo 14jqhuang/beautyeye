@@ -135,20 +135,32 @@ UIManager.put("TabbedPane.tabAreaInsets"
 
 *说明:* 以上代码必须在 “`BeautyEyeLNFHelper.launchBeautyEyeLNF();`” 之后执行方能起效哦。
 
+=== [附录9]：如何完全隐藏一个窗体的标题栏？ ===
+
+在你的窗体被setVisible(true)前调用以下代码即可：
+{{{
+// set dialog full transparent
+setUndecorated(true);
+AWTUtilities.setWindowOpaque(this, false);
+this.getRootPane().setWindowDecorationStyle(JRootPane.NONE);
+}}}
+
+*说明:* 以上代码适用于所有处于非系统窗体标题栏的情况，包括官方MetalLookAndFeel外观等。
+
 <br>
 ----
 
-=== 附录9：API文档 ===
+=== 附录10：API文档 ===
 
 [http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/doc/api_doc/index.html 在线阅读] or  [http://code.google.com/p/beautyeye/downloads/list 下载all_in_one包]
 
-=== 附录10：为何java1.6.0_10或update 11版不能启用BeautyEye L&F的窗口透明？===
+=== 附录11：为何java1.6.0_10或update 11版不能启用BeautyEye L&F的窗口透明？===
 因为该版本存在一个Bug，具体[https://code.google.com/p/beautyeye/wiki/java_1_6_0_u10_BUG_6750920 请看这里].
 
-=== 附录11：关于win7平台下某些java版本上的文本字体发虚的问题说明 ===
+=== 附录12：关于win7平台下某些java版本上的文本字体发虚的问题说明 ===
 该问题具体请参见 issue 25
 
-=== 附录12：关于使用了BeautyEye后窗口的contentPane变成全透明的说明 ===
+=== 附录13：关于使用了BeautyEye后窗口的contentPane变成全透明的说明 ===
 
 首先申明这不是BeautyEye的bug，这其实是官方窗口透明API的实现，JFrame（包括JDialog）的contentPane实质就是JPanel，它被认为是窗口的一部分，官方窗口透明API在透明窗口其它部件的同时也把它透明了（我没看过源码，目前还不能确切的说），但这是合理的，因为它将能实现你还没想到的全透明场景。
 
