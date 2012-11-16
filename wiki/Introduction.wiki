@@ -135,14 +135,14 @@ UIManager.put("TabbedPane.tabAreaInsets"
 
 *说明:* 以上代码必须在 “`BeautyEyeLNFHelper.launchBeautyEyeLNF();`” 之后执行方能起效哦。
 
-=== [附录9]：如何完全隐藏一个窗体的标题栏？ ===
+=== [附录9]：如何调置窗体背景全透明并完全隐藏一个窗体的标题栏？ ===
 
 在你的窗体被setVisible(true)前调用以下代码即可：
 {{{
-// set dialog full transparent
-setUndecorated(true);
-AWTUtilities.setWindowOpaque(this, false);
-this.getRootPane().setWindowDecorationStyle(JRootPane.NONE);
+// set frame full transparent
+frame.setUndecorated(true);
+frame.AWTUtilities.setWindowOpaque(this, false);
+frame.this.getRootPane().setWindowDecorationStyle(JRootPane.NONE);
 }}}
 
 *说明:* 以上代码适用于所有处于非系统窗体标题栏的情况，包括官方MetalLookAndFeel外观等。
