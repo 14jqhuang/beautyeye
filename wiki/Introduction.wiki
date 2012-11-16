@@ -137,6 +137,8 @@ UIManager.put("TabbedPane.tabAreaInsets"
 
 === [附录9]：如何调置窗体背景全透明并完全隐藏一个窗体的标题栏？ ===
 
+http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/help_about_trasparent.png
+
 在你的窗体被setVisible(true)前调用以下代码即可：
 {{{
 // set frame full transparent
