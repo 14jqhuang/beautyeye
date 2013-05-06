@@ -162,7 +162,7 @@ frame.getRootPane().setWindowDecorationStyle(JRootPane.NONE);
 === 附录12：关于win7平台下某些java版本上的文本字体发虚的问题说明 ===
 该问题具体请参见 issue 25
 
-==解决方案==
+*解决方案：*
 把默认的字体换成win7平台下默认的微软雅黑，则字体效果会大有改善。
 {{{
 /** UIManager中UI字体相关的key */
