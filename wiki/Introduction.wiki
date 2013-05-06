@@ -165,48 +165,47 @@ frame.getRootPane().setWindowDecorationStyle(JRootPane.NONE);
 ==解决方案==
 把默认的字体换成win7平台下默认的微软雅黑，则字体效果会大有改善。
 {{{
-	/** UIManager中UI字体相关的key */
-	public static String[] DEFAULT_FONT  = new String[]{
-	      "Table.font"
-	      ,"TableHeader.font"
-	      ,"CheckBox.font"
-	      ,"Tree.font"
-	      ,"Viewport.font"
-	      ,"ProgressBar.font"
-	      ,"RadioButtonMenuItem.font"
-	      ,"ToolBar.font"
-	      ,"ColorChooser.font"
-	      ,"ToggleButton.font"
-	      ,"Panel.font"
-	      ,"TextArea.font"
-	      ,"Menu.font"
-	      ,"TableHeader.font"
-	      // ,"TextField.font"
-	      ,"OptionPane.font"
-	      ,"MenuBar.font"
-	      ,"Button.font"
-	      ,"Label.font"
-	      ,"PasswordField.font"
-	      ,"ScrollPane.font"
-	      ,"MenuItem.font"
-	      ,"ToolTip.font"
-	      ,"List.font"
-	      ,"EditorPane.font"
-	      ,"Table.font"
-	      ,"TabbedPane.font"
-	      ,"RadioButton.font"
-	      ,"CheckBoxMenuItem.font"
-	      ,"TextPane.font"
-	      ,"PopupMenu.font"
-	      ,"TitledBorder.font"
-	      ,"ComboBox.font" 
-	};
+/** UIManager中UI字体相关的key */
+public static String[] DEFAULT_FONT  = new String[]{
+	"Table.font"
+	,"TableHeader.font"
+	,"CheckBox.font"
+	,"Tree.font"
+	,"Viewport.font"
+	,"ProgressBar.font"
+	,"RadioButtonMenuItem.font"
+	,"ToolBar.font"
+	,"ColorChooser.font"
+	,"ToggleButton.font"
+	,"Panel.font"
+	,"TextArea.font"
+	,"Menu.font"
+	,"TableHeader.font"
+	// ,"TextField.font"
+	,"OptionPane.font"
+	,"MenuBar.font"
+	,"Button.font"
+	,"Label.font"
+	,"PasswordField.font"
+	,"ScrollPane.font"
+	,"MenuItem.font"
+	,"ToolTip.font"
+	,"List.font"
+	,"EditorPane.font"
+	,"Table.font"
+	,"TabbedPane.font"
+	,"RadioButton.font"
+	,"CheckBoxMenuItem.font"
+	,"TextPane.font"
+	,"PopupMenu.font"
+	,"TitledBorder.font"
+	,"ComboBox.font" 
+};
 }}}
 {{{
-	// 调整默认字体
-	for (int i = 0; i < SwingUtils.DEFAULT_FONT.length; i++)
-		UIManager.put(SwingUtils.DEFAULT_FONT[i],
-			new Font("微软雅黑", Font.PLAIN,14));
+// 调整默认字体
+for (int i = 0; i < SwingUtils.DEFAULT_FONT.length; i++)
+	UIManager.put(SwingUtils.DEFAULT_FONT[i],new Font("微软雅黑", Font.PLAIN,14));
 }}}
 
 === 附录13：关于使用了BeautyEye后窗口的contentPane变成全透明的说明 ===
