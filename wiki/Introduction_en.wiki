@@ -92,13 +92,13 @@ http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/toolbar_bg_p
 *Method 1：*
 {{{
 //Set properties："true" means used "ToolBar.background" corol fill the background
-//色填充背景，BeautyEye中此属性默认是false
+//This is "false" in BeautyEye's default setting.
 UIManager.put("ToolBar.isPaintPlainBackground", Boolean.TRUE);
 }}}
 
-*方法2：*
+*Method 2：*
 {{{
-//使用ClientProperty单独设置控制每个toolbar：true表示使用ToolBar.background
+//Use ClientProperty Separate settings control every toolbar："true"means use ToolBar.background
 //颜色实现纯色填充背景，BeautyEye中此属性默认是false
 toolbarInstance.putClientProperty("ToolBar.isPaintPlainBackground", Boolean.TRUE);
 }}}
