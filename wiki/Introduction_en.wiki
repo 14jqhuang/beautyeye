@@ -28,7 +28,7 @@ public static void main(String[] args)
 <br>
 ----
 
-=== [Appendix 1]：Method to setting frame window border style. ===
+=== [1]：Method to setting frame window border style. ===
 
 {{{
 public static void main(String[] args)
