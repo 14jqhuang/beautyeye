@@ -28,14 +28,14 @@ public static void main(String[] args)
 <br>
 ----
 
-=== [附录1]：如何定义窗口边框类型？ ===
+=== [Appendix 1]：Method to setting frame window border style. ===
 
 {{{
 public static void main(String[] args)
 {
     try
     {
-        //设置本属性将改变窗口边框样式定义
+        //frame window border style here
         BeautyEyeLNFHelper.frameBorderStyle = BeautyEyeLNFHelper.FrameBorderStyle.osLookAndFeelDecorated;
         org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper.launchBeautyEyeLNF();
     }
@@ -43,12 +43,12 @@ public static void main(String[] args)
     {
         //TODO exception
     }
-    ..................... 你的程序代码 .........................
-    ..................... 你的程序代码 .........................
+    ..................... your code .........................
+    ..................... your code .........................
 }
 }}}
 
-=== [附录2]：有几种窗口边框类型？ ===
+=== [Appendix 2]：有几种窗口边框类型？ ===
 
 || *序号* || *窗口边框尖型* || *代码* || *BeautyEye中默认使用* || *效果图* ||
 || 1 || 系统默认边框 || `FrameBorderStyle.osLookAndFeelDecorated` ||  || http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/x3.png ||
