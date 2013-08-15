@@ -99,11 +99,11 @@ UIManager.put("ToolBar.isPaintPlainBackground", Boolean.TRUE);
 *Method 2：*
 {{{
 //Use ClientProperty Separate settings control every toolbar："true"means use ToolBar.background
-//颜色实现纯色填充背景，BeautyEye中此属性默认是false
+//This is "false" in BeautyEye's default setting.
 toolbarInstance.putClientProperty("ToolBar.isPaintPlainBackground", Boolean.TRUE);
 }}}
 
-*说明:* 方法2可以单独控制每一个JToolBar组件，而方法1是全局属性，方法2的优先级高于方法1。
+*Note:* Method 2 can control every JToolBar component，而方法1是全局属性，方法2的优先级高于方法1。
 
 === [附录7]：如何自定义JToolBar ui的border？ ===
 
