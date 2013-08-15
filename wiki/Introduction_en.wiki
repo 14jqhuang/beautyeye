@@ -1,14 +1,14 @@
 #summary BeautyEye L&F introduction in english.
 
-=== 第一步：如何开始？ ===
+=== step 1：how to start？ ===
 
-首先把 *`beautyeye_lnf.jar`* 文件作为lib放入你的项目并引用之.<br>
-目前，*`beautyeye_lnf.jar`* 文件位于all_in_one.zip包中的位置是：`all_in_one/dist/`
+file *`beautyeye_lnf.jar`* should go under YOUR_PROJECT/lib and added to build path.<br>
+Notes: *`beautyeye_lnf.jar`* is located `all_in_on/dist/` which place all_in_one.zip to unpack
 
 
-=== 第二步：如何使用BeautyEye L&F？ ===
+=== step 2：how to use BeautyEye L&F in my code？ ===
 
-<font color="#2A779D">加入以下代码，即可将你的Java程序界面更换成Beauty Eye的外观：</font>
+<font color="#2A779D">Add the following code to your Java project,the GUI look and feel styles will replaced the  BeautyEye L&F:</font>
 {{{
 public static void main(String[] args)
 {
@@ -20,8 +20,8 @@ public static void main(String[] args)
     {
         //TODO exception
     }
-    ..................... 你的程序代码 .........................
-    ..................... 你的程序代码 .........................
+    ..................... your code .........................
+    ..................... your code .........................
 }
 }}}
 
