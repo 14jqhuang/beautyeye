@@ -56,7 +56,7 @@ public static void main(String[] args)
 || 3 || Weak modeling translucence border || `FrameBorderStyle.translucencySmallShadow` ||  || http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/x1.png ||
 || 4 || Nomarl opacity border || `FrameBorderStyle.generalNoTranslucencyShadow` || java1.5 || http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/x2.png ||
 
-=== [Appendix 3]：How to use different color buttons？ ===
+=== Appendix 3：How to use different color buttons？ ===
 
 || *No* || *Code* || *Default in BeautyEye* || *Effect* ||
 || 1 ||  `btnInstance.setUI(new BEButtonUI().setNormalColor(BEButtonUI.NormalColor.normal));` || YES || http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/btn2.png ||
@@ -65,33 +65,33 @@ public static void main(String[] args)
 || 4 ||  `btnInstance.setUI(new BEButtonUI().setNormalColor(BEButtonUI.NormalColor.blue));` ||  || http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/btn4.png ||
 || 5 ||  `btnInstance.setUI(new BEButtonUI().setNormalColor(BEButtonUI.NormalColor.red));` ||  || http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/btn5.png ||
 
-=== [Appendix 4]：How to hide“设置”button？ ===
+=== Appendix 4：How to hide “设置” button？ ===
 
 http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/y1.png
 
-*说明：* 该按钮目前仅作为演示窗口标题按钮的自定义能力之用，未来将开放自定义功能，目前你可选择隐藏之。
+*Note：* This button is only as a demo window title button ability of custom now,the future will open the custom function,you can choose hide it now. 
 {{{
     UIManager.put("RootPane.setupButtonVisible", false);
 }}}
 
-=== [附录5]：如何开启/关闭窗口在不活动时的半透明效果？ ===
+=== Appendix 5：How to open/close the translucent effect when window inactive？ ===
 
 *`@since v3.2`*
 
 {{{
-//设置此开关量为false即表示关闭之，BeautyEye LNF中默认是true
+//Set this switch is "false"，is means close it. It's default "true" in BeautyEye LNF.
 BeautyEyeLNFHelper.translucencyAtFrameInactive = false;
 }}}
 
-=== [附录6]：怎样让JToolBar的ui不使用渐变图片而使用传统的纯色来填充背景？ ===
+=== Appendix 6：How to keep the JToolBar UI using conventional solid color to fill the background and never use gradient images？ ===
 
 *`@since v3.4`*
 
 http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/toolbar_bg_paint_contrast.png
 
-*方法1：*
+*Method 1：*
 {{{
-//设置属性即可：true表示使用ToolBar.background颜色实现纯
+//Set properties："true" means used "ToolBar.background" corol fill the background
 //色填充背景，BeautyEye中此属性默认是false
 UIManager.put("ToolBar.isPaintPlainBackground", Boolean.TRUE);
 }}}
