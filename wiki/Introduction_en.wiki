@@ -28,7 +28,7 @@ public static void main(String[] args)
 <br>
 ----
 
-=== [1]：Method to setting frame window border style. ===
+=== [Appendix 1]:Method to setting frame window border style. ===
 
 {{{
 public static void main(String[] args)
@@ -48,7 +48,7 @@ public static void main(String[] args)
 }
 }}}
 
-=== [Appendix 2]：有几种窗口边框类型？ ===
+=== [Appendix 2]:有几种窗口边框类型？ ===
 
 || *序号* || *窗口边框尖型* || *代码* || *BeautyEye中默认使用* || *效果图* ||
 || 1 || 系统默认边框 || `FrameBorderStyle.osLookAndFeelDecorated` ||  || http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/x3.png ||
