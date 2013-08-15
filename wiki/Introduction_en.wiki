@@ -1,12 +1,12 @@
 #summary BeautyEye L&F introduction in english.
 
-=== step 1：how to start？ ===
+=== Step 1：How to start？ ===
 
-file *`beautyeye_lnf.jar`* should go under YOUR_PROJECT/lib and added to build path.<br>
+File *`beautyeye_lnf.jar`* should go under YOUR_PROJECT/lib and added to build path.<br>
 Notes: *`beautyeye_lnf.jar`* is located `all_in_on/dist/` which place all_in_one.zip to unpack
 
 
-=== step 2：how to use BeautyEye L&F in my code？ ===
+=== Step 2：How to use BeautyEye L&F in my code？ ===
 
 <font color="#2A779D">Add the following code to your Java project,the GUI look and feel styles will replaced the  BeautyEye L&F:</font>
 {{{
