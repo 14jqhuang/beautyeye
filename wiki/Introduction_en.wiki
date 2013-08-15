@@ -103,42 +103,44 @@ UIManager.put("ToolBar.isPaintPlainBackground", Boolean.TRUE);
 toolbarInstance.putClientProperty("ToolBar.isPaintPlainBackground", Boolean.TRUE);
 }}}
 
-*Note:* Method 2 can control every JToolBar component，而方法1是全局属性，方法2的优先级高于方法1。
+*Note:* Method 2 can control every JToolBar component,but Method 1 Is global properties,Method 2's priority is higher than Method 1.
 
-=== [附录7]：如何自定义JToolBar ui的border？ ===
+=== Appendix 7：How to define JToolBar ui's border？ ===
 
 *`@since v3.4`*
 
-加入以下代码，使用你自已的border：
+Put in the following code to use your own border：
 {{{
-//自定义JToolBar ui的border
+//Custom JToolBar ui's border
 Border bd = new org.jb2011.lnf.beautyeye.ch8_toolbar.BEToolBarUI.ToolBarBorder(
-        UIManager.getColor("ToolBar.shadow")     //Floatable时触点的颜色
-        , UIManager.getColor("ToolBar.highlight")//Floatable时触点的阴影颜色
-        , new Insets(6, 0, 11, 0));              //border的默认insets
+        UIManager.getColor("ToolBar.shadow")     //When Floatable contact's color
+        , UIManager.getColor("ToolBar.highlight")//When Floatable contact's shadow color
+        , new Insets(6, 0, 11, 0));              //Border's default insets
 UIManager.put("ToolBar.border",new BorderUIResource(bd));
 }}}
 
-*说明:* 以上代码必须在 “`BeautyEyeLNFHelper.launchBeautyEyeLNF();`” 之后执行方能起效哦。
+*Note:* The abover code must be follow “`BeautyEyeLNFHelper.launchBeautyEyeLNF();`”so that can work well.
 
-=== [附录8]：如何设置BeantuEye外观下JTabbedPane的左缩进？ ===
+
+
+=== Appendix 8：How to set JTabbedPane's left indent in BeantuEye？ ===
 
 http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/tab_indent_desc_pic.png
 
-参见以下代码实现：
+You can easy to realize by following codes：
 {{{
-//改变InsetsUIResource参数的值即可实现
+//Change InsetsUIResource's parameters can realize
 UIManager.put("TabbedPane.tabAreaInsets"
 	, new javax.swing.plaf.InsetsUIResource(3,20,2,20));
 }}}
 
-*说明:* 以上代码必须在 “`BeautyEyeLNFHelper.launchBeautyEyeLNF();`” 之后执行方能起效哦。
+*Note:* The abover code must be follow “`BeautyEyeLNFHelper.launchBeautyEyeLNF();`”so that can work well.
 
-=== [附录9]：如何调置窗体背景全透明并完全隐藏一个窗体的标题栏？ ===
+=== Appendix 9：How to set background transparent and completely hide the title bar for a frame？ ===
 
 http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/help_about_trasparent.png
 
-在你的窗体被setVisible(true)前调用以下代码即可：
+Transfer the following code before you frame has be setVisible(true)：
 {{{
 // set frame full transparent
 frame.setUndecorated(true);
@@ -146,25 +148,26 @@ AWTUtilities.setWindowOpaque(frame, false);
 frame.getRootPane().setWindowDecorationStyle(JRootPane.NONE);
 }}}
 
-*说明:* 以上代码适用于所有处于非系统窗体标题栏的情况，包括官方MetalLookAndFeel外观等。
+*NOte:* The abover code apply to all frame'title include official MetalLookAndFeel
+ except system's.
 
 <br>
 ----
 
-=== 附录10：API文档 ===
+=== Appendix 10：API Document ===
 
-[http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/doc/api_doc/index.html 在线阅读] or  [http://code.google.com/p/beautyeye/downloads/list 下载all_in_one包]
+[http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/doc/api_doc/index.html Online reading] or  [http://code.google.com/p/beautyeye/downloads/list Download all_in_one]
 
-=== 附录11：为何java1.6.0_10或update 11版不能启用BeautyEye L&F的窗口透明？===
-因为该版本存在一个Bug，具体[https://code.google.com/p/beautyeye/wiki/java_1_6_0_u10_BUG_6750920 请看这里].
+=== Appendix 11：Why can't use BeautyEye L&F to make the window transparent with java1.6.0_10 or update 11 versions？===
+Because this versions has a Bug,concreteness:[https://code.google.com/p/beautyeye/wiki/java_1_6_0_u10_BUG_6750920 Look at here].
 
-=== 附录12：关于win7平台下某些java版本上的文本字体发虚的问题说明 ===
-该问题具体请参见 issue 25
+=== Appendix 12：Specification for text font breezing problem on some Java version of Windows 7 ===
+Please specific look at issue 25
 
-*解决方案：*
-把默认的字体换成win7平台下默认的微软雅黑，则字体效果会大有改善。
+*Solution：*
+Change the default font to Microsoft Accor black (win7's default font),The font effect will be greatly improved.
 {{{
-/** UIManager中UI字体相关的key */
+/**The key be related to font of UIManager's UI */
 public static String[] DEFAULT_FONT  = new String[]{
 	"Table.font"
 	,"TableHeader.font"
@@ -202,13 +205,13 @@ public static String[] DEFAULT_FONT  = new String[]{
 };
 }}}
 {{{
-// 调整默认字体
+// Change default font.
 for (int i = 0; i < SwingUtils.DEFAULT_FONT.length; i++)
 	UIManager.put(SwingUtils.DEFAULT_FONT[i],new Font("微软雅黑", Font.PLAIN,14));
 }}}
 
-=== 附录13：关于使用了BeautyEye后窗口的contentPane变成全透明的说明 ===
+=== Appendix 13：Specification for window's contentPane become transparent by uesed BeautyEye ===
 
-首先申明这不是BeautyEye的bug，这其实是官方窗口透明API的实现，JFrame（包括JDialog）的contentPane实质就是JPanel，它被认为是窗口的一部分，官方窗口透明API在透明窗口其它部件的同时也把它透明了（我没看过源码，目前还不能确切的说），但这是合理的，因为它将能实现你还没想到的全透明场景。
+First of all declare,this is not BeautyEye's bug，actually this is official's Window Transparency come true,JFrame(include JDialog)'scontentPane actually is JPanel,it is considered be a part of window，it has be transparented when other component be transparented by official's Window Transparency API（I did not see the source code,it is not exactly now.）.But it is reasonable,because it will be able to make transparent you also have never thought of the scene.
 
-*解决办法：* 在contentPane上再加一层JPanel即可。
+*Solution：* Add a new JPanel on contentPane.
