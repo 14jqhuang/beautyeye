@@ -52,11 +52,11 @@ public static void main(String[] args)
 
 || *#* || *Border style* || *code* || *BeautyEye test on jdk* || *Screenshot* ||
 || 1 || System default || `FrameBorderStyle.osLookAndFeelDecorated` ||  || http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/x3.png ||
-|| 2 || 强立体感半透明边框 || `FrameBorderStyle.translucencyAppleLike` || java1.6.0_u10 or higher || http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/x4.png ||
+|| 2 || Powerful modeling translucence border || `FrameBorderStyle.translucencyAppleLike` || java1.6.0_u10 or higher || http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/x4.png ||
 || 3 || 弱立体感半透明边框 || `FrameBorderStyle.translucencySmallShadow` ||  || http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/x1.png ||
 || 4 || 普通不透明边框 || `FrameBorderStyle.generalNoTranslucencyShadow` || java1.5 || http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/x2.png ||
 
-=== [附录3]：如何使用不同颜色的按钮？ ===
+=== [Appendix 3]：如何使用不同颜色的按钮？ ===
 
 || *序号* || *代码* || *BeautyEye中默认* || *效果图* ||
 || 1 ||  `btnInstance.setUI(new BEButtonUI().setNormalColor(BEButtonUI.NormalColor.normal));` || YES || http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/btn2.png ||
