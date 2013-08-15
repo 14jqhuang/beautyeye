@@ -1,4 +1,4 @@
-#summary BeautyEye L&F简明开发者指南.
+#summary BeautyEye L&F introduction in english.
 
 === 第一步：如何开始？ ===
 
