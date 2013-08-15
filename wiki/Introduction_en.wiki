@@ -1,12 +1,12 @@
 #summary BeautyEye L&F introduction in english.
 
-=== Step 1：How to start？ ===
+=== Step 1:How to start？ ===
 
 File *`beautyeye_lnf.jar`* should go under YOUR_PROJECT/lib and added to build path.<br>
 Notes: *`beautyeye_lnf.jar`* is located `all_in_on/dist/` which place all_in_one.zip to unpack
 
 
-=== Step 2：How to use BeautyEye L&F in my code？ ===
+=== Step 2:How to use BeautyEye L&F in my code？ ===
 
 <font color="#2A779D">Add the following code to your Java project,the GUI look and feel styles will replaced the  BeautyEye L&F:</font>
 {{{
@@ -48,7 +48,7 @@ public static void main(String[] args)
 }
 }}}
 
-=== [Appendix 2]:有几种窗口边框类型？ ===
+=== Appendix 2:Frame window border style list. ===
 
 || *序号* || *窗口边框尖型* || *代码* || *BeautyEye中默认使用* || *效果图* ||
 || 1 || 系统默认边框 || `FrameBorderStyle.osLookAndFeelDecorated` ||  || http://beautyeye.googlecode.com/svn/trunk/beautyeye_lnf/screenshots/x3.png ||
