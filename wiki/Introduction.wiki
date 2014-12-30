@@ -213,8 +213,8 @@ public static String[] DEFAULT_FONT  = new String[]{
 }}}
 {{{
 // 调整默认字体
-for (int i = 0; i < SwingUtils.DEFAULT_FONT.length; i++)
-	UIManager.put(SwingUtils.DEFAULT_FONT[i],new Font("微软雅黑", Font.PLAIN,14));
+for (int i = 0; i < DEFAULT_FONT.length; i++)
+	UIManager.put(DEFAULT_FONT[i],new Font("微软雅黑", Font.PLAIN,14));
 }}}
 
 === 附录14：关于使用了BeautyEye后窗口的contentPane变成全透明的说明 ===
